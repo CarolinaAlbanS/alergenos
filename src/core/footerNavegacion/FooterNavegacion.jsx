@@ -1,11 +1,23 @@
+import { Link } from "react-router-dom"
+import "./footerNavegation.scss"
+
 export default function NavBar(){
-    return <nav>
+    return (
+        <nav>
     <ul>
-        <li> <img src="https://img.freepik.com/vector-premium/casa-icono-logo-casa_419328-2081.jpg?w=996" alt="Home" /> </li>
-        {/* <li> <img src="" alt="Favoritos" /> </li>
-        <li> <img src="" alt="Diario" /> </li>
-        <li> <img src="" alt="Compartir" /> </li> */}
+     <Link to={"/inicio"}>
+        <li> <img src="./img/icons/home.png" alt="Home" /> </li>
+        </Link>
+            <Link to={"/favoritos"}>
+         <li> <img src="./img/icons/star_1.png" alt="Favoritos" /> </li>
+         </Link>
+         <Link to={"/diario"}>
+        <li> <img src="./img/icons/diary.png" alt="Diario" /> </li>
+        </Link>
+
+        <li> <img src="./img/icons/share.png" alt="Compartir" /> </li> 
     </ul>
 </nav>
+    ) 
 }
 
