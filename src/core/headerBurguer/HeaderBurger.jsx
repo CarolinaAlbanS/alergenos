@@ -18,15 +18,28 @@ const HeaderBurger = () => {
   if(OpenMenu){
     BurgerBarElementos = (
       <BurgerBar>
-      {/* <ul>
+       <ul>
+          
              <li> <img src="" alt="logo" /> Perfil</li>
+
+
              <li> <img src="./img/icons/star_1.png" alt="logo" /> Favorito</li>
+
+
              <li> <img src="./img/icons/diary.png" alt="logo" /> Diario</li>
+
+
              <li> <img src="" alt="logo" /> Compartir</li>
+
+
              <li> <img src="" alt="logo" /> Traductor</li>
+
+
              <li> <img src="" alt="logo" /> Terminos</li>
+
+
              <li> <img src="" alt="logo" /> Salir</li>
-         </ul> */}
+         </ul> 
     </BurgerBar>
     )
   }

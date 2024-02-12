@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import "./FooterNavegation.scss"
+import "./FooterNavegacion.scss"
 
 export default function NavBar(){
     return (
