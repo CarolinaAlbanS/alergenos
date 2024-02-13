@@ -65,5 +65,20 @@ $esmeralda : rgb(51, 154, 116);
                 }
             }
         }
+
+        &-nav {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            top: 0;
+            right: -55px;
+            height: 100%;
+            justify-content: space-between;
+
+            &__icon {
+                width: 25px;
+                cursor: pointer;
+            }
+        }
     }
 }

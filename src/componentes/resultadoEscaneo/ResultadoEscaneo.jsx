@@ -35,6 +35,12 @@ const ResultadoEscaneo = ({product, productStatus}) => {
                             ? 'scannedProduct-pic-icon__circle--ok' 
                             : 'scannedProduct-pic-icon__circle--unknown')} alt='icon'/>
                     </div>
+
+                    <div className='scannedProduct-pic-nav'>
+                           <img src='./img/icons/star_1.png' className='scannedProduct-pic-nav__icon' alt='icono'/>
+                           <img src='./img/icons/diary.png' className='scannedProduct-pic-nav__icon' alt='icono'/>
+                           <img src='./img/icons/share.png' className='scannedProduct-pic-nav__icon' alt='icono'/>
+                    </div>
                 </div>
 
                 <div className='scannedProduct-info'>
@@ -51,3 +57,4 @@ const ResultadoEscaneo = ({product, productStatus}) => {
 }
 
 export default ResultadoEscaneo
+
