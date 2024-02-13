@@ -10,6 +10,7 @@ const Escaneo = () => {
   const [scanCode, setScanCode] = useState(null); //numero
   const [product, setProduct] = useState(null); //json
   const [productStatus, setProductStatus] = useState(null);
+  const [scanType, setScanType] = useState('código de barras');
 
   const unknownProduct =  {
     name : 'producto desconocido',
@@ -108,14 +109,14 @@ const Escaneo = () => {
             
 
             {productStatus  
-              ? <p className='scan__msg'>{resultMsg[productStatus]}</p>
-              : <p className="scan__p">Tan solo tienes que centrar el <span>código de barras</span> del producto en el recuadro</p>
+              ? <p className='scan__p'>{resultMsg[productStatus]}</p>
+              : <p className="scan__p">Tan solo tienes que centrar el <span className="bold">{scanType}</span> del producto en el recuadro</p>
             }
             
 
             {productStatus
                 ? <ResultadoEscaneo product={product} productStatus={productStatus}></ResultadoEscaneo>
-                : <Escanear scanCode={scanCode} setScanCode={setScanCode}></Escanear>
+                : <Escanear setScanCode={setScanCode} setScanType={setScanType} scanType={scanType}></Escanear>
             }
 
             {productStatus
