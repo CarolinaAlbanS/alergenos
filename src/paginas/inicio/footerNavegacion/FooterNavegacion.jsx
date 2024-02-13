@@ -5,7 +5,7 @@ export default function NavBar(){
     return (
         <nav>
     <ul className="lista-footer">
-     <Link to={"/inicio"}>
+     <Link to={"/"}>
         <li> <img src="./img/icons/home.png" alt="Home" className="imagen-footer"/> </li>
         </Link>
             <Link to={"/favoritos"}>
