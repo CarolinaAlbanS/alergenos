@@ -1,6 +1,5 @@
-// Intentar que la informacion que se envie de los button sea en ingles
-// que se envie los nombres de mis buttons en ingles para poder hacer la comparacion
-// con los elementos de la api de alba
+//hago un array con todos los alergenos dentro el recorreocon un for y hago un boton que filtre
+// por cada una de las primera letras que hay
 import React from "react";
 
 const SelecAlergenos = () => {
