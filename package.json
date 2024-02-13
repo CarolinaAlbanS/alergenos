@@ -12,6 +12,9 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.50.1",
     "react-html5-qrcode-reader": "^1.1.1",
+
+    "react-owl-carousel": "^2.3.3",
+
     "react-router-dom": "^6.22.0",
     "react-scripts": "5.0.1",
     "sass": "^1.70.0",
@@ -40,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
   }
 }
