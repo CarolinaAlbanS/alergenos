@@ -19,7 +19,7 @@ export default function BurgerBar(){
              </Link>
 
              
-             <li className="liHeaderBarList"> <img src="./img/icons/share.png" alt="logo" className="imagenHeaderBarList" /> Compartir</li>
+             <li className="liHeaderBarList"> <a href="https://wetransfer.com/"><img src="./img/icons/share.png" alt="logo" className="imagenHeaderBarList" />Compartir</a></li>
 
              <Link to={"/traductor"}>
              
