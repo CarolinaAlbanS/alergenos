@@ -1,0 +1,46 @@
+$esmeralda : rgb(51, 154, 116);
+
+.modal {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.588);
+
+    &-box {
+        width: clamp(250px, 80vw, 500px);
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        border: 1px solid black;
+        padding: 20px;
+        
+        &__warn {
+            width: 60px;
+        }
+
+        &-btns {
+            display: flex;
+            gap: 12px;
+            
+            &__btn {
+                border-radius: 5px;
+                cursor: pointer;
+                border: none;
+                padding: 10px;
+
+                &--default {
+                    background-color: $esmeralda;
+                    color: white;
+                }
+            }
+        }
+    }
+
+}

@@ -5,7 +5,7 @@ import Escaneo from './paginas/escaneo/Escaneo';
 import Bienvenida from './paginas/bienvenida/Bienvenida';
 import Login from './paginas/login/Login';
 import Registo from './paginas/registro/Registo';
-import Favorito from './paginas/favorito/Favorito';
+import Favoritos from './paginas/favoritos/Favoritos';
 import Diario from './paginas/diario/Diario';
 import Inicio from './paginas/inicio/Inicio'
 // import FooterNavegacion from './paginas/inicio/footerNavegacion/FooterNavegacion';
@@ -27,7 +27,7 @@ function App() {
           <Route path='/bienvenida' element={<Bienvenida/>}></Route>
           <Route path='/login' element={<Login/>}></Route>
           <Route path='/registro' element={<Registo/>}></Route>
-          <Route path='/favoritos' element={<Favorito/>}></Route>
+          <Route path='/favoritos' element={<Favoritos/>}></Route>
           <Route path='/diario' element={<Diario/>}></Route>
           <Route path='/compartir' element={<Diario/>}></Route>
           <Route path='/terminos' element={<Terminos/>}></Route>

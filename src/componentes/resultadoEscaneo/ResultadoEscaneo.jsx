@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import './ResultadoEscaneo.scss';
+import ModalConfirm from '../modalConfirm/ModalConfirm';
 
 const ResultadoEscaneo = ({product, productStatus}) => {
 
+    const [showModal, setShowModal] = useState(false);
+
+    const openModal = () => {
+        setShowModal(true);
+    }
     
   return (
     <>
@@ -37,7 +43,10 @@ const ResultadoEscaneo = ({product, productStatus}) => {
                     </div>
 
                     <div className='scannedProduct-pic-nav'>
-                           <img src='./img/icons/star_1.png' className='scannedProduct-pic-nav__icon' alt='icono'/>
+                           <img 
+                                onClick={openModal} src='./img/icons/star_1.png' 
+                                className={'scannedProduct-pic-nav__icon ' + (productStatus === 'unknown' && 'scannedProduct-pic-nav__icon--disabled')} 
+                                alt='icono'/>
                            <img src='./img/icons/diary.png' className='scannedProduct-pic-nav__icon' alt='icono'/>
                            <img src='./img/icons/share.png' className='scannedProduct-pic-nav__icon' alt='icono'/>
                     </div>
@@ -46,9 +55,12 @@ const ResultadoEscaneo = ({product, productStatus}) => {
                 <div className='scannedProduct-info'>
                     <h4 className='scannedProduct-info__name'>{product.name}</h4>
                     <span className='scannedProduct-info__brands'>{product.brands}</span>
-                    <p className='scannedProduct-info__ing'>{product.ingredients}</p>
+                    <p className='scannedProduct-info__ing'>Ingredientes: {product.ingredients}</p>
                 </div>
 
+                <div className={'scannedProduct-modal-wrap ' + (showModal && 'scannedProduct-modal-wrap--visible')}>
+                    <ModalConfirm product={product} productStatus={productStatus} setShowModal={setShowModal} />
+                </div>           
             </div>
     
         }
