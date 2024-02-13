@@ -1,0 +1,53 @@
+$esmeralda : rgb(51, 154, 116);
+
+.scannedProduct {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-pic {
+        border-radius: 5px;
+        width: 150px;
+        height: 150px;
+        padding: 6px;
+        position: relative;
+        border: 6px solid;
+        
+        &--warn {
+            border-color: rgb(214, 78, 78);
+        }
+
+        &--ok {
+            border-color:$esmeralda;
+        }
+        
+        &--unknown {
+            border-color: rgb(228, 165, 63);
+        }
+
+        &__img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &__icon {
+            width: 30px;
+            position: absolute;
+            left: -24px;
+            bottom: -24px;
+            border-radius: 50%;
+            padding: 5px;
+
+            &--warn {
+                background-color:  rgb(214, 78, 78);
+            }
+            &--ok {
+                background-color:  $esmeralda;
+            }
+            &--unknown {
+                background-color:  rgb(228, 165, 63);
+            }
+        }
+    }
+}
