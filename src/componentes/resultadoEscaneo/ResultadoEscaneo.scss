@@ -1,0 +1,69 @@
+html {
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: inherit;
+}
+$esmeralda : rgb(51, 154, 116);
+
+.scannedProduct {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-pic {
+        border-radius: 5px;
+        width: 150px;
+        height: 150px;
+        padding: 6px;
+        position: relative;
+        border: 8px solid;
+        
+        &--warn {
+            border-color: rgb(214, 78, 78);
+        }
+
+        &--ok {
+            border-color:$esmeralda;
+        }
+
+        &--unknown {
+            border-color: rgb(228, 165, 63);
+        }
+
+        &__img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &-icon {
+            position: absolute;
+            left: -23px;
+            height: 130%;
+            top: -24px;
+            display: flex;
+            flex-direction: column;
+
+            &__circle {
+
+                width: 40px;                
+                border-radius: 50%;
+                padding: 5px;
+                
+                &--warn {
+                    background-color:  rgb(214, 78, 78);
+                    margin-top: auto;
+                }
+                &--ok {
+                    background-color:  $esmeralda;
+                }
+                &--unknown {
+                    background-color:  rgb(228, 165, 63);
+                    margin: auto;
+                }
+            }
+        }
+    }
+}

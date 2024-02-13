@@ -1,5 +1,5 @@
 
-const Diario = () => {
+const Inicio = () => {
   return (
     <div>
       
@@ -7,4 +7,4 @@ const Diario = () => {
   )
 }
 
-export default Diario
+export default Inicio
