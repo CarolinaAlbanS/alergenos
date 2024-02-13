@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const QuienEres = () => {
-  //   const inicioState = {
-  //     nombre: " ",
-  //     email: " ",
-  //     movil: " ",
-  //     password: " ",
-  //   };
-  const state = { filepreview: null };
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => {};
+  const onSubmit = async (data) => {
+    console.log(data);
+    const res = await axios.post("http://localhost:3001/users/create", data);
+    const cli = res.data.data._id;
+    console.log(cli);
+    localStorage.setItem("id", cli);
+  };
 
   return (
     <div>
@@ -20,30 +20,27 @@ const QuienEres = () => {
       </div>
       <p>1 de 4</p>
       <h1>Dinos quien eres</h1>
-      <form>
-        <input type="file" name="myImage" onChange={this.onChange} />
-        <img class="img-preview" src={this.state.filepreview} />
-        <label html="nombre"></label>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <label html="img"></label>
+        <input type="file" name="img" accept="image/png, image/jpg"></input>
+        <label html="name"></label>
         <input
           type="text"
-          id="nombre"
-          {...register("nombre", { required: true })}
-          // onInput={handleSubmit(onSubmit)}
+          id="name"
+          {...register("name", { required: true })}
         ></input>
         <label htmlFor="email"></label>
         <input
           type="email"
           id="email"
           {...register("email", { required: true })}
-          // onInput={handleSubmit(onSubmit)}
           placeholder="Dirección de email"
         ></input>
-        <label htmlFor="movil"></label>
+        <label htmlFor="phone"></label>
         <input
           type="numbre"
-          id="movil"
-          {...register("movil", { required: true })}
-          onInput={handleSubmit(onSubmit)}
+          id="phone"
+          {...register("phone", { required: true })}
           placeholder="Móvil"
         ></input>
         <label htmlFor="password"></label>
@@ -51,10 +48,9 @@ const QuienEres = () => {
           type="text"
           id="password"
           {...register("password", { required: true })}
-          onInput={handleSubmit(onSubmit)}
           placeholder="Password"
         ></input>
-        <button type="submit">Guardar perfil</button>
+        <button>Guardar perfil</button>
       </form>
     </div>
   );
