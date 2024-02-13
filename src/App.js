@@ -8,6 +8,13 @@ import Login from './paginas/login/Login';
 import Registo from './paginas/registro/Registo';
 import Favorito from './paginas/favorito/Favorito';
 import Diario from './paginas/diario/Diario';
+import FooterNavegacion from './core/footerNavegacion/FooterNavegacion';
+import Terminos from './paginas/terminos/Terminos';
+import Traductor from './paginas/traductor/Traductor';
+
+
+
+
 
 function App() {
   return (
@@ -22,7 +29,12 @@ function App() {
           <Route path='/registro' element={<Registo/>}></Route>
           <Route path='/favoritos' element={<Favorito/>}></Route>
           <Route path='/diario' element={<Diario/>}></Route>
+          <Route path='/compartir' element={<Diario/>}></Route>
+          <Route path='/inicio' element={<Inicio/>}></Route>
+          <Route path='/terminos' element={<Terminos/>}></Route>
+          <Route path='/traductor' element={<Traductor/>}></Route>
         </Routes>
+        <FooterNavegacion></FooterNavegacion>
       </BrowserRouter>
     </>
   );

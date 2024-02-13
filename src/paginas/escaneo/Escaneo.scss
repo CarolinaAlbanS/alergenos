@@ -1,0 +1,44 @@
+$esmeralda : rgb(51, 154, 116);
+
+.scan-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.scan {
+    width: 90vw;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+
+    &__close {
+        margin-left: auto;
+        width: 20px;
+    }
+
+    &__title {
+        font-weight: bold;
+        display: block;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    &__p {
+        font-size: 14px;
+        max-width: 70vw;
+    }
+
+    &__btn {
+        padding: 10px;
+        background-color: $esmeralda;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        width: 90%;
+    }
+}

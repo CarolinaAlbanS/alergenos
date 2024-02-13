@@ -1,0 +1,44 @@
+$esmeralda : rgb(51, 154, 116);
+
+.scanner-component {
+    border: 6px solid $esmeralda;
+    border-radius: 5px;
+
+    video {
+        display: block;
+        width: 100%;
+    }
+}
+
+.scan-icons {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+
+    &-item {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        position: relative;
+        flex-direction: column;
+
+        &-icon{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color:$esmeralda;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &__img {
+                width: 30px;
+            }
+        }
+
+        &__txt {
+            font-size: 10px;
+        }
+    }
+}
+
