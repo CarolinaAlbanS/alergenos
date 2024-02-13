@@ -11,6 +11,7 @@ import Inicio from './paginas/inicio/Inicio'
 // import FooterNavegacion from './paginas/inicio/footerNavegacion/FooterNavegacion';
 import Terminos from './paginas/terminos/Terminos';
 import Traductor from './paginas/traductor/Traductor';
+import Valoracion from './paginas/valoracion/Valoracion';
 
 
 
@@ -32,7 +33,11 @@ function App() {
           <Route path='/compartir' element={<Diario/>}></Route>
           <Route path='/terminos' element={<Terminos/>}></Route>
           <Route path='/traductor' element={<Traductor/>}></Route>
+
+          <Route path='/valoracion' element={<Valoracion/>}></Route>
+
           <Route path='/' element={<Inicio/>}></Route>
+
         </Routes>
         {/* <FooterNavegacion></FooterNavegacion> */}
       </BrowserRouter>
