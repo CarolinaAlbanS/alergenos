@@ -9,12 +9,17 @@ function Valoracion() {
   const [hover, setHover] = useState(null);
   return (
     <div>
+    <div className="volver">
       <Link to="/escaneo" className="escaneo">
         Volver
       </Link>
-      <img class="logo1" src={logo1} alt="logo"></img>
+      </div>
+      <div className="logo1">
+      <img src={logo1} alt="logo"></img>
+      </div>
       <h4 class="titleh4">¡Gracias por usar Applergic!</h4>
       <h5 class="titleh5">Por favor,evalua tu experiencia.</h5>
+      <div className="estrellas">
       {[...Array(5)].map((star, index) => {
         const currentRating = index + 1;
         return (
@@ -35,10 +40,12 @@ function Valoracion() {
           </label>
         );
       })}
-
+      </div>
+      <div className="sugerencias1">
       <a class="sugerencias" href=" enviar sugerencias" title="enviar">
         Enviar sugerencias
       </a>
+      </div>
     </div>
   );
 }
