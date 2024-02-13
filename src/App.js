@@ -11,6 +11,7 @@ import Diario from './paginas/diario/Diario';
 import FooterNavegacion from './core/footerNavegacion/FooterNavegacion';
 import Terminos from './paginas/terminos/Terminos';
 import Traductor from './paginas/traductor/Traductor';
+import Valoracion from './paginas/valoracion/Valoracion';
 
 
 
@@ -33,6 +34,7 @@ function App() {
           <Route path='/inicio' element={<Inicio/>}></Route>
           <Route path='/terminos' element={<Terminos/>}></Route>
           <Route path='/traductor' element={<Traductor/>}></Route>
+          <Route path='/valoracion' element={<Valoracion/>}></Route>
         </Routes>
         <FooterNavegacion></FooterNavegacion>
       </BrowserRouter>
