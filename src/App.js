@@ -29,9 +29,9 @@ function App() {
           <Route path="/compartir" element={<Diario />}></Route>
           <Route path="/terminos" element={<Terminos />}></Route>
           <Route path="/valoracion" element={<Valoracion />}></Route>
-          <Route path="/portada" element={<Portada />}></Route>
+          <Route path="/" element={<Portada />}></Route>
           
-          <Route path="/" element={<Inicio />}></Route>
+          <Route path="/inicio" element={<Inicio />}></Route>
           <Route path="/emergencia" element={<Emergencia />}></Route>
           <Route path="/alergenos" element={<SelecAlergenos />}></Route>
         </Routes>
