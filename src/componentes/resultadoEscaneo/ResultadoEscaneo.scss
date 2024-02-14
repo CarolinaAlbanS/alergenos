@@ -1,3 +1,10 @@
+html {
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: inherit;
+}
 $esmeralda : rgb(51, 154, 116);
 
 .scannedProduct {
@@ -11,7 +18,7 @@ $esmeralda : rgb(51, 154, 116);
         height: 150px;
         padding: 6px;
         position: relative;
-        border: 6px solid;
+        border: 8px solid;
         
         &--warn {
             border-color: rgb(214, 78, 78);
@@ -20,7 +27,7 @@ $esmeralda : rgb(51, 154, 116);
         &--ok {
             border-color:$esmeralda;
         }
-        
+
         &--unknown {
             border-color: rgb(228, 165, 63);
         }
@@ -31,22 +38,46 @@ $esmeralda : rgb(51, 154, 116);
             object-fit: cover;
         }
 
-        &__icon {
-            width: 30px;
+        &-icon {
             position: absolute;
-            left: -24px;
-            bottom: -24px;
-            border-radius: 50%;
-            padding: 5px;
+            left: -23px;
+            height: 130%;
+            top: -24px;
+            display: flex;
+            flex-direction: column;
 
-            &--warn {
-                background-color:  rgb(214, 78, 78);
+            &__circle {
+
+                width: 40px;                
+                border-radius: 50%;
+                padding: 5px;
+                
+                &--warn {
+                    background-color:  rgb(214, 78, 78);
+                    margin-top: auto;
+                }
+                &--ok {
+                    background-color:  $esmeralda;
+                }
+                &--unknown {
+                    background-color:  rgb(228, 165, 63);
+                    margin: auto;
+                }
             }
-            &--ok {
-                background-color:  $esmeralda;
-            }
-            &--unknown {
-                background-color:  rgb(228, 165, 63);
+        }
+
+        &-nav {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            top: 0;
+            right: -55px;
+            height: 100%;
+            justify-content: space-between;
+
+            &__icon {
+                width: 25px;
+                cursor: pointer;
             }
         }
     }

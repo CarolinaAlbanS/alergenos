@@ -9,9 +9,7 @@ const ResultadoEscaneo = ({product, productStatus}) => {
 
         { product &&
         
-            <div className='scannedProduct'>
-
-                
+            <div className='scannedProduct'>      
 
                 <div className={'scannedProduct-pic ' + 
                     (productStatus === 'warn' 
@@ -21,12 +19,28 @@ const ResultadoEscaneo = ({product, productStatus}) => {
                         : 'scannedProduct-pic--unknown')}>
 
                     <img src={product.image} className='scannedProduct-pic__img' alt={product.name}/>
-                    <img src="./img/icons/close.png" className={'scannedProduct-pic__icon ' + 
-                        (productStatus === 'warn' 
-                        ? 'scannedProduct-pic__icon--warn' 
-                        : productStatus === 'ok' 
-                        ? 'scannedProduct-pic__icon--ok' 
-                        : 'scannedProduct-pic__icon--unknown')} alt='icon'/>
+
+                    <div className='scannedProduct-pic-icon'>
+                        <img src={ productStatus === 'warn'
+                           ? "./img/icons/warn.png"
+                           : productStatus === 'ok'
+                           ? "./img/icons/ok.png"
+                           : "./img/icons/unknown.png"
+                           } 
+                           
+                           className={'scannedProduct-pic-icon__circle ' + 
+                            (productStatus === 'warn' 
+                            ? 'scannedProduct-pic-icon__circle--warn' 
+                            : productStatus === 'ok' 
+                            ? 'scannedProduct-pic-icon__circle--ok' 
+                            : 'scannedProduct-pic-icon__circle--unknown')} alt='icon'/>
+                    </div>
+
+                    <div className='scannedProduct-pic-nav'>
+                           <img src='./img/icons/star_1.png' className='scannedProduct-pic-nav__icon' alt='icono'/>
+                           <img src='./img/icons/diary.png' className='scannedProduct-pic-nav__icon' alt='icono'/>
+                           <img src='./img/icons/share.png' className='scannedProduct-pic-nav__icon' alt='icono'/>
+                    </div>
                 </div>
 
                 <div className='scannedProduct-info'>
@@ -43,3 +57,4 @@ const ResultadoEscaneo = ({product, productStatus}) => {
 }
 
 export default ResultadoEscaneo
+
