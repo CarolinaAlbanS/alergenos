@@ -51,7 +51,7 @@ const Login = () => {
         <Link to="/registro">
           <h4>Crea tu cuenta aquí</h4>
         </Link>
-        <Link to="/">
+        <Link to="/inicio">
           <p>Me registraré en otro momento</p>
         </Link>
       </div>
