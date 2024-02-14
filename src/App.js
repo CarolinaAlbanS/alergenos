@@ -6,16 +6,11 @@ import Escaneo from "./paginas/escaneo/Escaneo";
 import Bienvenida from "./paginas/bienvenida/Bienvenida";
 import Login from "./paginas/login/Login";
 import Registo from "./paginas/registro/Registo";
-
-import Favorito from "./paginas/favorito/Favorito";
-
 import Favorito from "./paginas/favoritos/Favoritos";
-
 import Diario from "./paginas/diario/Diario";
 import Inicio from "./paginas/inicio/Inicio";
 // import FooterNavegacion from './paginas/inicio/footerNavegacion/FooterNavegacion';
 import Terminos from "./paginas/terminos/Terminos";
-import Traductor from "./paginas/traductor/Traductor";
 import Valoracion from "./paginas/valoracion/Valoracion";
 import Emergencia from "./componentes/emergencia/Emergencia";
 import SelecAlergenos from "./componentes/selecAlergenos/SelecAlergenos";
@@ -40,14 +35,9 @@ function App() {
           <Route path="/diario" element={<Diario />}></Route>
           <Route path="/compartir" element={<Diario />}></Route>
           <Route path="/terminos" element={<Terminos />}></Route>
-
           <Route path="/valoracion" element={<Valoracion />}></Route>
           <Route path="/" element={<Inicio />}></Route>
-
-          <Route path="/traductor" element={<Traductor />}></Route>
-
           <Route path="/valoracion" element={<Valoracion />}></Route>
-
           <Route path="/" element={<Inicio />}></Route>
           <Route path="/emergencia" element={<Emergencia />}></Route>
           <Route path="/alergenos" element={<SelecAlergenos />}></Route>
