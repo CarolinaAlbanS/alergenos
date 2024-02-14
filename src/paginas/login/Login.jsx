@@ -36,7 +36,7 @@ const Login = () => {
         ></input>
         <label htmlFor="password"></label>
         <input
-          type="text"
+          type="password"
           id="password"
           {...register("password", { required: true })}
           // onInput={handleSubmit(onSubmit)}
