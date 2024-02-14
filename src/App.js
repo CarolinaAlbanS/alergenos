@@ -6,7 +6,7 @@ import Escaneo from "./paginas/escaneo/Escaneo";
 import Bienvenida from "./paginas/bienvenida/Bienvenida";
 import Login from "./paginas/login/Login";
 import Registo from "./paginas/registro/Registo";
-import Favorito from "./paginas/favorito/Favorito";
+import Favorito from "./paginas/favoritos/Favoritos";
 import Diario from "./paginas/diario/Diario";
 import Inicio from "./paginas/inicio/Inicio";
 // import FooterNavegacion from './paginas/inicio/footerNavegacion/FooterNavegacion';
