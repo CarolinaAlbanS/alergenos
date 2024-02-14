@@ -1,3 +1,4 @@
+
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 // import HeaderBurger from './paginas/inicio/headerBurguer/HeaderBurger';
@@ -15,12 +16,14 @@ import Valoracion from "./paginas/valoracion/Valoracion";
 import Emergencia from "./componentes/emergencia/Emergencia";
 import SelecAlergenos from "./componentes/selecAlergenos/SelecAlergenos";
 
+
 function App() {
   return (
     <>
       <BrowserRouter>
         {/* <HeaderBurger/> */}
         <Routes>
+
           <Route path="/escaneo" element={<Escaneo />}></Route>
           <Route path="/bienvenida" element={<Bienvenida />}></Route>
           <Route path="/login" element={<Login />}></Route>
@@ -36,6 +39,7 @@ function App() {
           <Route path="/" element={<Inicio />}></Route>
           <Route path="/emergencia" element={<Emergencia />}></Route>
           <Route path="/alergenos" element={<SelecAlergenos />}></Route>
+
         </Routes>
         {/* <FooterNavegacion></FooterNavegacion> */}
       </BrowserRouter>
