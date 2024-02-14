@@ -1,0 +1,14 @@
+{
+    "diario":{
+      "hello-world": "hola mundo",
+      "return": "volver",
+      "This is the report based on your Diary" : "Este es el informe basado en tu Diario.",
+      "Activity for the month of November 2023" : "Actividad del mes de noviembre de 2023",
+      "Spanish" : "Español" ,
+      "English" : "Inglés",
+      "Allergic to":  "Alérgico a",
+      "Date November 8, 2023": "Fecha 8 noviembre de 2023",
+      "New APTOS products included in your diary." : "Nuevos productos APTOS incluidos en tu diario.",
+      "Name" :"Nombre"
+    }
+ } 

@@ -4,6 +4,8 @@ html {
 
 * {
     box-sizing: inherit;
+    margin: 0;
+    padding: 0;
 }
 $esmeralda : rgb(51, 154, 116);
 
@@ -79,6 +81,24 @@ $esmeralda : rgb(51, 154, 116);
                 width: 25px;
                 cursor: pointer;
             }
+        }
+    }
+
+    &-info {
+        margin-top: 15px;
+
+        &__ing {
+            max-height: 20vh;
+            overflow-y: auto;
+            font-size: 13px;
+        }
+    }
+
+    &-modal-wrap {
+        visibility: hidden;
+
+        &--visible {
+            visibility: visible;
         }
     }
 }

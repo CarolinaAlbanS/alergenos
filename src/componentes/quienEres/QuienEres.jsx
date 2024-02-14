@@ -45,13 +45,16 @@ const QuienEres = () => {
         ></input>
         <label htmlFor="password"></label>
         <input
-          type="text"
+          type="password"
           id="password"
           {...register("password", { required: true })}
           placeholder="Password"
         ></input>
         <button>Guardar perfil</button>
       </form>
+      <Link to="/emergencia">
+        <button>siguiente</button>
+      </Link>
     </div>
   );
 };

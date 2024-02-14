@@ -7,8 +7,11 @@ const Emergencia = () => {
   const id = localStorage.getItem("id");
   const { register, handleSubmit } = useForm();
   const onSubmit = async (data) => {
-    console.log(data);
-    const res = await axios.patch(`http://localhost:3001/users/${id}`, data);
+    const emergency = data;
+    const res = await axios.patch(
+      `http://localhost:3001/users/${id}`,
+      emergency
+    );
     console.log(res);
   };
 
@@ -30,34 +33,37 @@ const Emergencia = () => {
         <input
           type="text"
           id="name"
-          {...register("name", { required: true })}
-          placeholder="Nombre"
+          {...register("emergency.name", { required: true })}
+          placeholder="Dirección de email"
         ></input>
         <label htmlFor="email"></label>
         <input
           type="email"
           id="email"
-          {...register("email", { required: true })}
+          {...register("emergency.email", { required: true })}
           placeholder="Dirección de email"
         ></input>
         <label htmlFor="phone"></label>
         <input
           type="numbre"
           id="phone"
-          {...register("phone", { required: true })}
+          {...register("emergency.phone", { required: true })}
           placeholder="Móvil"
         ></input>
         <label htmlFor="seguro"></label>
         <input
           type="text"
           id="seguro"
-          {...register("seguro", { required: true })}
+          {...register("emergency.seguro", { required: true })}
           placeholder="Compañia de seguros ó Nº poliza"
         ></input>
         <button>Guardar emergencias</button>
       </form>
       <Link to="/inicio">
         Registrar mi contacto de emergencias en otro momento
+      </Link>
+      <Link to="/alergenos">
+        <button>Siguiente</button>
       </Link>
     </div>
   );

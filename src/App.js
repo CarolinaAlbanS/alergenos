@@ -1,3 +1,4 @@
+
 import './App.scss';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Escaneo from './paginas/escaneo/Escaneo';
@@ -20,6 +21,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
+
           
           <Route path='/escaneo' element={<Escaneo/>}></Route>
           <Route path='/bienvenida' element={<Bienvenida/>}></Route>
@@ -32,6 +34,10 @@ function App() {
           <Route path='/traductor' element={<Traductor/>}></Route>
           <Route path='/valoracion' element={<Valoracion/>}></Route>
           <Route path='/inicio' element={<Inicio/>}></Route>
+
+
+
+
 
         </Routes>
       </BrowserRouter>
