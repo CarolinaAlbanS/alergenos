@@ -11,10 +11,9 @@ const Login = () => {
   //se ejecuta al enviar formulario
   const onSubmit = async (data) => {
     console.log(data);
-    const res = await axios.post(
-      "http://localhost:3001/users/authenticate",
-      data
-    );
+    const res = await axios
+      .post("http://localhost:3001/users/authenticate", data)
+      .then((res) => localStorage.setItem("id", res.data.data.user._id));
   };
   return (
     <>
@@ -52,7 +51,7 @@ const Login = () => {
         <Link to="/registro">
           <h4>Crea tu cuenta aquí</h4>
         </Link>
-        <Link to="/inicio">
+        <Link to="/">
           <p>Me registraré en otro momento</p>
         </Link>
       </div>

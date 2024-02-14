@@ -52,6 +52,9 @@ const QuienEres = () => {
         ></input>
         <button>Guardar perfil</button>
       </form>
+      <Link to="/emergencia">
+        <button>siguiente</button>
+      </Link>
     </div>
   );
 };

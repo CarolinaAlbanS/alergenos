@@ -1,6 +1,9 @@
 //hago un array con todos los alergenos dentro el recorreocon un for y hago un boton que filtre
 // por cada una de las primera letras que hay
 import React from "react";
+import axios from "axios";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const SelecAlergenos = () => {
   const alimentos = {
@@ -37,23 +40,31 @@ const SelecAlergenos = () => {
     V: ["Vitamina D", "Vitamina E"],
     Y: ["Yuca"],
   };
+  const id = localStorage.getItem("id");
+  const [inputValue, setInputValue] = useState([]);
+
+  const handleInputChange = (alimento) => {
+    setInputValue([...inputValue, alimento]);
+  };
 
   return (
     <div>
       <div>
         {Object.keys(alimentos).map((categoria, index) => (
           <div key={index}>
-            <button>{categoria}</button>
+            <a href={`#${categoria}`}>{categoria}</a>
           </div>
         ))}
       </div>
       <div>
         {Object.keys(alimentos).map((categoria, index) => (
           <div key={index}>
-            <p>{categoria}</p>
+            <p id="categoria">{categoria}</p>
             <div>
               {alimentos[categoria].map((alimento, index) => (
-                <button key={index}>{alimento}</button>
+                <div onClick={() => handleInputChange(alimento)} key={index}>
+                  <button>{alimento}</button>
+                </div>
               ))}
             </div>
           </div>
