@@ -8,7 +8,6 @@ const Registo = () => {
     <div>
       <QuienEres></QuienEres>
       <SelecAlergenos></SelecAlergenos>
-      <Emergencia></Emergencia>
     </div>
   );
 };

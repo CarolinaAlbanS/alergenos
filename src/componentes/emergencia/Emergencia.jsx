@@ -7,8 +7,11 @@ const Emergencia = () => {
   const id = localStorage.getItem("id");
   const { register, handleSubmit } = useForm();
   const onSubmit = async (data) => {
-    console.log(data);
-    const res = await axios.patch(`http://localhost:3001/users/${id}`, data);
+    const emergency = data;
+    const res = await axios.patch(
+      `http://localhost:3001/users/${id}`,
+      emergency
+    );
     console.log(res);
   };
 
@@ -31,7 +34,7 @@ const Emergencia = () => {
           type="text"
           id="name"
           {...register("name", { required: true })}
-          placeholder="Nombre"
+          placeholder="Dirección de email"
         ></input>
         <label htmlFor="email"></label>
         <input
