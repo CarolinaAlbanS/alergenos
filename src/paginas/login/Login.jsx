@@ -11,10 +11,9 @@ const Login = () => {
   //se ejecuta al enviar formulario
   const onSubmit = async (data) => {
     console.log(data);
-    const res = await axios.post(
-      "http://localhost:3001/users/authenticate",
-      data
-    );
+    const res = await axios
+      .post("http://localhost:3001/users/authenticate", data)
+      .then((res) => localStorage.setItem("id", res.data.data.user._id));
   };
   return (
     <>

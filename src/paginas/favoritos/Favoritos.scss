@@ -1,0 +1,24 @@
+.favoritos {
+    width: 90vw;
+    margin: 0 auto;
+    margin-top: 50px;
+
+    &__title {
+        font-weight: bold;
+        display: block;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    &-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        &-item {
+            background-color: gray;
+            border-radius: 5px;
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
