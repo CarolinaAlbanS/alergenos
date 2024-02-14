@@ -21,6 +21,10 @@ $esmeralda : rgb(51, 154, 116);
         border: 1px solid black;
         padding: 20px;
         
+        &--hidden {
+            display: none;
+        }
+
         &__warn {
             width: 60px;
         }

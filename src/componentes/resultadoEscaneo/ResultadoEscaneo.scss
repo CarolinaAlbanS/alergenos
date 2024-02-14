@@ -86,6 +86,12 @@ $esmeralda : rgb(51, 154, 116);
 
     &-info {
         margin-top: 15px;
+
+        &__ing {
+            max-height: 20vh;
+            overflow-y: auto;
+            font-size: 13px;
+        }
     }
 
     &-modal-wrap {

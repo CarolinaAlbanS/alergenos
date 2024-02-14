@@ -18,7 +18,7 @@ $esmeralda : rgb(51, 154, 116);
     &-item {
         display: flex;
         align-items: center;
-        justify-content: start;
+        justify-content: flex-start;
         position: relative;
         flex-direction: column;
 

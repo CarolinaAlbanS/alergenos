@@ -24,8 +24,18 @@ const Escaneo = () => {
 
   useEffect(() => {
 
-    const getProduct = async () => {
+    const saveProduct = async (product) => {
+      try {
+        console.log(product);
+        const newProduct = await axios.post('http://localhost:3001/productos/create', product);
 
+        console.log('Producto guardado con éxito');
+      } catch (err) {
+        console.log(err.message);
+      }
+    }
+
+    const getProduct = async () => {
       try {
         const foodFactsResponse = await axios.get(`${urlFoodFacts}${scanCode}`);
 
@@ -42,20 +52,22 @@ const Escaneo = () => {
           const mappedProduct =  {
             name : productJson.product_name,
             quantity : productJson.quantity,
-            brands : productJson.brands,
-            image: productJson.image_url,
-            ingredients : productJson.ingredients ? productJson.ingredients.map(ing => ing.text) : undefined,
-            traces: productJson.traces,
+            brands : Array.isArray(productJson.brands) 
+                      ? productJson.brands
+                      : Array(productJson.brands),
+            image: productJson.image_url ? productJson.image_url : '',
+            ingredients : productJson.ingredients ? productJson.ingredients.map(ing => ing.text) : [''],
+            // traces: productJson.traces,
             allergens: Array.isArray(productJson.allergens) 
                         ? productJson.allergens.map(al => al.split(':').at(-1))
-                        : Array.from(productJson.allergens.split(':').slice(-1))
-            // allergens: productJson.allergens.isArray() ? productJson.allergens.map(al => al.split(':').at(-1)) : 
-
+                        : Array.from(productJson.allergens.split(':').slice(-1)),
+            barcode: productJson.code
           }
 
-          setProduct(mappedProduct);
-          console.log(mappedProduct);
 
+          setProduct(mappedProduct);
+          console.log(mappedProduct, 'aquí');
+          saveProduct(mappedProduct);
           //si producto tiene posibles alérgenos cotejar con alergias del usuario
           if (mappedProduct.allergens) {
             let hasAllergens = [];
@@ -74,6 +86,8 @@ const Escaneo = () => {
           } else {
             setProductStatus('ok');
           }
+
+          
         }
 
       } catch (err) {
@@ -82,8 +96,6 @@ const Escaneo = () => {
         setProduct(unknownProduct);
         console.log(err.message);
       }
-
-     
     }
 
     getProduct();
@@ -100,7 +112,7 @@ const Escaneo = () => {
     <div className="scan-wrapper">
 
         <div className="scan">
-            <img className="scan__close" src="./img/icons/close.png" alt="icono cerrar"/>
+            <img className="scan__close" src="/img/icons/close.png" alt="icono cerrar"/>
 
             {productStatus 
               ? <span className="scan__title">Aquí tienes tu resultado</span>
