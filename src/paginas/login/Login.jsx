@@ -1,22 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
   const { register, handleSubmit, watch } = useForm();
 
+  useEffect(() => {}, []);
+
   //se ejecuta al enviar formulario
-  const onSubmit = (data) => {
-    // try{
-    //   const respuesta = await fetch(URL, {
-    //     method: 'GET',
-    //     HEADERS: {
-    //       "content.Type": "application/json",
-    //     },
-    //     body: JSON.stringify(data)
-    //   });
-    // }
-    // axios. post (loclas hosts, data)
+  const onSubmit = async (data) => {
+    console.log(data);
+    const res = await axios.post(
+      "http://localhost:3001/users/authenticate",
+      data
+    );
   };
   return (
     <>
@@ -38,16 +36,16 @@ const Login = () => {
         ></input>
         <label htmlFor="password"></label>
         <input
-          type="text"
+          type="password"
           id="password"
           {...register("password", { required: true })}
-          onInput={handleSubmit(onSubmit)}
+          // onInput={handleSubmit(onSubmit)}
           placeholder="Password"
         ></input>
         <Link to="/contrseña">
           <p>¿OLvidaste tu contraseña?</p>
         </Link>
-        <button type="submit">Entrar</button>
+        <button>Entrar</button>
       </form>
       <div>
         <p>¿nuevo en Applergic?</p>
