@@ -47,6 +47,7 @@ function Valoracion() {
       </a>
       </div>
     </div>
+    
   );
 }
 
