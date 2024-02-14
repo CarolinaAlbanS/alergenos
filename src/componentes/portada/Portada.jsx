@@ -1,15 +1,13 @@
-// import React from 'react'
-// export default function Portada jsx(){
-//     return <h1>Applergic</h1>;
-// }
-
-const Portada = () => {
+import { Link } from "react-router-dom";
+import "./Portada.scss";
+export default function Portada (){
     return (
-        <div>
+        <div className="ContenedorPortada">
             <h1>Applergic</h1>
-        <p>Mi guía alimentaria</p>
-       </div>
-        
+            <p>Mi guía alimentaria</p>
+            <Link to={"/bienvenida"}>
+            <img className="imagenPortada" src="./img/logoApplergicFigurasGiro.png" alt="imagen de portada" />
+            </Link>
+        </div>
     )
 }
-export default Portada
