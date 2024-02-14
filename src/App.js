@@ -12,7 +12,12 @@ import Terminos from "./paginas/terminos/Terminos";
 import Valoracion from "./paginas/valoracion/Valoracion";
 import Emergencia from "./componentes/emergencia/Emergencia";
 import SelecAlergenos from "./componentes/selecAlergenos/SelecAlergenos";
+
+import FinishRegistro from "./componentes/finalRegistro/FinishRegistro";
+
+
 import Portada from "./componentes/portada/Portada";
+
 
 
 function App() {
@@ -20,6 +25,11 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
+
+
+
+
+
           <Route path="/escaneo" element={<Escaneo />}></Route>
           <Route path="/bienvenida" element={<Bienvenida />}></Route>
           <Route path="/login" element={<Login />}></Route>
@@ -34,6 +44,14 @@ function App() {
           <Route path="/inicio" element={<Inicio />}></Route>
           <Route path="/emergencia" element={<Emergencia />}></Route>
           <Route path="/alergenos" element={<SelecAlergenos />}></Route>
+
+          <Route path="/finishRegistro" element={<FinishRegistro />}></Route>
+          
+
+          
+         
+
+
         </Routes>
       </BrowserRouter>
     </>
