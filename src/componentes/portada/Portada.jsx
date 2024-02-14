@@ -1,15 +1,10 @@
-// import React from 'react'
-// export default function Portada jsx(){
-//     return <h1>Applergic</h1>;
-// }
-
-const Portada = () => {
+import "./Portada.scss";
+export default function Portada (){
     return (
-        <div>
+        <div className="ContenedorPortada">
             <h1>Applergic</h1>
-        <p>Mi guía alimentaria</p>
-       </div>
-        
+            <p>Mi guía alimentaria</p>
+            <img className="imagenPortada" src="./img/logoApplergicFigurasGiro.png" alt="imagen de portada" />
+        </div>
     )
 }
-export default Portada

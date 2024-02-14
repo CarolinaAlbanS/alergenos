@@ -12,6 +12,8 @@ import Terminos from "./paginas/terminos/Terminos";
 import Valoracion from "./paginas/valoracion/Valoracion";
 import Emergencia from "./componentes/emergencia/Emergencia";
 import SelecAlergenos from "./componentes/selecAlergenos/SelecAlergenos";
+import Portada from "./componentes/portada/Portada";
+
 
 function App() {
   return (
@@ -27,7 +29,8 @@ function App() {
           <Route path="/compartir" element={<Diario />}></Route>
           <Route path="/terminos" element={<Terminos />}></Route>
           <Route path="/valoracion" element={<Valoracion />}></Route>
-          <Route path="/inicio" element={<Inicio />}></Route>
+          <Route path="/portada" element={<Portada />}></Route>
+          
           <Route path="/" element={<Inicio />}></Route>
           <Route path="/emergencia" element={<Emergencia />}></Route>
           <Route path="/alergenos" element={<SelecAlergenos />}></Route>
