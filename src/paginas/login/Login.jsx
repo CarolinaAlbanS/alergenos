@@ -14,8 +14,12 @@ const Login = () => {
     try {
       const res = await axios
         .post("http://localhost:3001/users/authenticate", data)
-        .then((res) => localStorage.setItem("id", res.data.data.user._id));
-      navigate("/");
+        .then((res) => {
+          localStorage.setItem("id", res.data.data.user._id);
+          localStorage.setItem("token", res.data.data.token);
+        });
+
+      navigate("/inicio");
     } catch (error) {
       console.error("Error en la peticion", error);
     }
