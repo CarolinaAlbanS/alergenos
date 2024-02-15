@@ -12,6 +12,8 @@ import Terminos from "./paginas/terminos/Terminos";
 import Valoracion from "./paginas/valoracion/Valoracion";
 import Emergencia from "./componentes/emergencia/Emergencia";
 import SelecAlergenos from "./componentes/selecAlergenos/SelecAlergenos";
+import Compartir from "./paginas/compartir/Compartir";
+
 
 function App() {
   return (
@@ -24,14 +26,16 @@ function App() {
           <Route path="/registro" element={<Registo />}></Route>
           <Route path="/favoritos" element={<Favoritos />}></Route>
           <Route path="/diario" element={<Diario />}></Route>
-          <Route path="/compartir" element={<Diario />}></Route>
           <Route path="/terminos" element={<Terminos />}></Route>
           <Route path="/valoracion" element={<Valoracion />}></Route>
           <Route path="/inicio" element={<Inicio />}></Route>
           <Route path="/" element={<Inicio />}></Route>
           <Route path="/emergencia" element={<Emergencia />}></Route>
           <Route path="/alergenos" element={<SelecAlergenos />}></Route>
+          <Route path="/compartir" element={<Compartir />}></Route>
+         
         </Routes>
+       
       </BrowserRouter>
     </>
   );

@@ -15,7 +15,9 @@ export default function NavBar(){
         <li> <img src="./img/icons/diary.png" alt="Diario" className="imagen-footer"/> </li>
         </Link>
 
-        <li> <a href="https://wetransfer.com/"><img src="./img/icons/share.png" alt="Compartir" className="imagen-footer"/></a>  </li> 
+        <Link to={"/compartir"}>
+        <li> <img src="./img/icons/share.png" alt="Compartir" className="imagen-footer"/> </li> 
+        </Link>
     </ul>
 </nav>
     ) 
