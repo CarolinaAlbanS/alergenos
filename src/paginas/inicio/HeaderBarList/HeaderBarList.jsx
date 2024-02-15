@@ -5,10 +5,17 @@ export default function BurgerBar(){
     return(
         <nav>
             <ul className="listaHeaderBarList">
-            <Link to={"/perfil"}>
+
+            
+
+
+            <Link to={"/perfil"} className="perfil">
+             
+
              <li className="liHeaderBarList"> <img src="./img/icons/user.png" alt="logo" className="imagenHeaderBarList" /> Perfil</li>
             </Link>
 
+             </Link>
              <Link to={"/favoritos"} className="links">
              
              <li className="liHeaderBarList"> <img src="./img/icons/star_1.png" alt="logo" className="imagenHeaderBarList" /> Favorito</li>

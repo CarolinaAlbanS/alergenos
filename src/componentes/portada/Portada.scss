@@ -1,0 +1,13 @@
+.ContenedorPortada {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 58%;
+    transform: translate(-50%, -42%);
+}
+
+.imagenPortada {
+height: 100%;
+}
