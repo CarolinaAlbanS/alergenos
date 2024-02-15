@@ -7,8 +7,6 @@ const Registo = () => {
   return (
     <div>
       <QuienEres></QuienEres>
-      <SelecAlergenos></SelecAlergenos>
-      <Emergencia></Emergencia>
     </div>
   );
 };

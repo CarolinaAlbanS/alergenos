@@ -6,11 +6,16 @@ import axios from "axios";
 const QuienEres = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = async (data) => {
-    console.log(data);
-    const res = await axios.post("http://localhost:3001/users/create", data);
-    const cli = res.data.data._id;
-    console.log(cli);
-    localStorage.setItem("id", cli);
+    try {
+      console.log(data);
+      const res = await axios.post("http://localhost:3001/users/create", data);
+      const cli = res.data.data._id;
+      console.log(cli);
+      localStorage.setItem("id", cli);
+      navigator("/emergencia");
+    } catch (error) {
+      console.error("fallo en la llamada", error);
+    }
   };
 
   return (
@@ -45,7 +50,7 @@ const QuienEres = () => {
         ></input>
         <label htmlFor="password"></label>
         <input
-          type="text"
+          type="password"
           id="password"
           {...register("password", { required: true })}
           placeholder="Password"

@@ -1,5 +1,14 @@
 $esmeralda : rgb(51, 154, 116);
 
+.bold {
+    font-weight: bold;
+    color: black;
+}
+
+p {
+    color: rgb(87, 86, 86);
+}
+
 .scan-wrapper {
     display: flex;
     justify-content: center;
@@ -14,11 +23,13 @@ $esmeralda : rgb(51, 154, 116);
     flex-direction: column;
     text-align: center;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 30px;
 
     &__close {
         margin-left: auto;
         width: 20px;
+        cursor: pointer;
     }
 
     &__title {
@@ -28,9 +39,11 @@ $esmeralda : rgb(51, 154, 116);
         font-size: 18px;
     }
 
+    
     &__p {
-        font-size: 14px;
-        max-width: 70vw;
+        font-size: 16px;
+        max-width: 60vw;
+        
     }
 
     &__btn {
@@ -40,5 +53,6 @@ $esmeralda : rgb(51, 154, 116);
         border: none;
         border-radius: 5px;
         width: 90%;
+        cursor: pointer;
     }
 }

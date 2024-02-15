@@ -1,13 +1,14 @@
 .lista-footer{
     display: flex;
     list-style-type: none;
-    column-gap: 300px;
+    column-gap: 40px;
     flex-wrap: wrap;
     position: fixed;
-    bottom: 50px;
-    left: 150px;
+    bottom: 20px;
+    left: 10%;
+    transform: translate(-10%);
 }
 
 .imagen-footer{
-     width: 100px;
+     width: 40px;
 }

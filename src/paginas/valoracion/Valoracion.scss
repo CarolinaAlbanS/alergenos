@@ -1,0 +1,54 @@
+
+.titleh4{
+font-size: 21px;
+text-align: center;
+letter-spacing: normal;
+}
+.titleh5{
+font-size: 21px;
+text-align: center;
+letter-spacing: normal;
+}
+.sugerencias{
+    text-decoration: none;
+    text-align: center;
+    color: turquoise;
+}
+
+.star{
+    cursor: pointer;
+}
+input[type=radio]{
+    display:none;
+}
+.estrellas {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+}
+.volver {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.logo1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo1 img {
+    width: 232pt;
+    height: 232pt;
+}
+a.escaneo {
+    text-decoration: none;
+    color: turquoise;
+}
+.sugerencias {
+    text-decoration: none;
+    text-align: center;
+    color: turquoise;
+}
+.sugerencias1 {
+    text-align: center;
+    margin-top: 50px;
+}
