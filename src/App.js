@@ -12,6 +12,7 @@ import Terminos from "./paginas/terminos/Terminos";
 import Valoracion from "./paginas/valoracion/Valoracion";
 import Emergencia from "./componentes/emergencia/Emergencia";
 import SelecAlergenos from "./componentes/selecAlergenos/SelecAlergenos";
+import ConfirAlergenos from "./componentes/confirAlergenos/ConfirAlergenos";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/" element={<Inicio />}></Route>
           <Route path="/emergencia" element={<Emergencia />}></Route>
           <Route path="/alergenos" element={<SelecAlergenos />}></Route>
+          <Route path="/confirmacion" element={<ConfirAlergenos />}></Route>
         </Routes>
       </BrowserRouter>
     </>
