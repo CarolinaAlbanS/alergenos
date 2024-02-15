@@ -5,9 +5,17 @@ export default function BurgerBar(){
     return(
         <nav>
             <ul className="listaHeaderBarList">
-             
-             <li className="liHeaderBarList"> <img src="./img/icons/user.png" alt="logo" className="imagenHeaderBarList" /> Perfil</li>
 
+            
+
+
+            <Link to={"/perfil"} className="perfil">
+             
+
+             <li className="liHeaderBarList"> <img src="./img/icons/user.png" alt="logo" className="imagenHeaderBarList" /> Perfil</li>
+            </Link>
+
+             </Link>
              <Link to={"/favoritos"} className="links">
              
              <li className="liHeaderBarList"> <img src="./img/icons/star_1.png" alt="logo" className="imagenHeaderBarList" /> Favorito</li>
@@ -18,8 +26,9 @@ export default function BurgerBar(){
              <li className="liHeaderBarList"> <img src="./img/icons/diary.png" alt="logo" className="imagenHeaderBarList" /> Diario</li>
              </Link>
 
-             
-             <li className="liHeaderBarList"> <a href="https://wetransfer.com/"><img src="./img/icons/share.png" alt="logo" className="imagenHeaderBarList" />Compartir</a></li>
+             <Link to={"/compartir"}>
+             <li className="liHeaderBarList"> <img src="./img/icons/share.png" alt="logo" className="imagenHeaderBarList" />Compartir</li>
+             </Link>
 
              <Link to={"/traductor"}>
              

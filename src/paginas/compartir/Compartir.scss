@@ -1,0 +1,17 @@
+.containerCompartir{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 70px;
+    column-gap: 30px;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    top: 5%;
+    max-width: 500px;
+    }
+
+
+.imagenCompartir{
+    width: 150px;
+}
