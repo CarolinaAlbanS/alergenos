@@ -1,0 +1,34 @@
+.btn1 {
+  display: flex;
+  flex-direction: row;
+  grid: 20px;
+  align-items: flex-end;
+  color:turquoise;
+  
+}
+.img1 {
+  display: flex;
+  gap: 15px;
+  height: 240px;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.datos {
+  text-align: center;
+}
+.hola-perfil {
+  text-align: center;
+}
+.datosPerfil {
+  text-align: center;
+  margin-top: 10px;
+}
+.favorits{
+    text-align: center;
+    margin-top: 10px;
+}
+.contactoEmergencia{
+    text-align: center;
+    margin-top: 10px;
+}

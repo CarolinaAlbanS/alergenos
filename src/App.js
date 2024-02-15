@@ -17,6 +17,7 @@ import FinishRegistro from "./componentes/finalRegistro/FinishRegistro";
 
 
 import Portada from "./componentes/portada/Portada";
+import Perfil from "./componentes/perfil/Perfil";
 
 
 
@@ -44,7 +45,7 @@ function App() {
           <Route path="/inicio" element={<Inicio />}></Route>
           <Route path="/emergencia" element={<Emergencia />}></Route>
           <Route path="/alergenos" element={<SelecAlergenos />}></Route>
-
+          <Route path="/perfil" element={<Perfil />}></Route>
           <Route path="/finishRegistro" element={<FinishRegistro />}></Route>
           
 
