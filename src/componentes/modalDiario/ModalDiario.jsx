@@ -24,6 +24,7 @@ const ModalDiario = ({product, productStatus, setShowModalDiary}) => {
     const addToDiary = async (product) => {
         try {
             const userId = localStorage.getItem("id");
+            const userToken = localStorage.getItem("token");
             //buscar el id del producto escaneado en nuestra colección
             const productMongo = await axios.get(`http://localhost:3001/productos/code/${product.barcode}`)
             const productId = productMongo.data.data._id;
@@ -33,7 +34,11 @@ const ModalDiario = ({product, productStatus, setShowModalDiary}) => {
             //recuperar el array de ids de productos favoritos del usuario
             const userDiaryArr = user.data.data.diary.map(fav => fav._id);
 
-            const patchDiary = await axios.patch(`http://localhost:3001/users/${userId}`, {diary: [...userDiaryArr, productId]});
+            await axios.patch(
+                `http://localhost:3001/users/${userId}`, 
+                {diary: [...userDiaryArr, productId]},
+                {headers: { Authorization: `Bearer ${userToken}`}}
+                );
 
     
             console.log('Producto añadido al diario');

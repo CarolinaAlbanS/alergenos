@@ -1,13 +1,16 @@
 import React, { useState } from 'react'
 import './ResultadoEscaneo.scss';
 import ModalConfirm from '../modalFavs/ModalFavs';
+import { useNavigate } from 'react-router-dom';
+import ModalDiario from '../modalDiario/ModalDiario';
 
 const ResultadoEscaneo = ({product, productStatus}) => {
+    const navigate = useNavigate();
+    const [showModalFavs, setShowModalFavs] = useState(false);
+    const [showModalDiary, setShowModalDiary] = useState(false);
 
-    const [showModal, setShowModal] = useState(false);
-
-    const openModal = () => {
-        setShowModal(true);
+    const openModal = (modal) => {
+        modal === 'favs' ? setShowModalFavs(true) : setShowModalDiary(true);
     }
     
   return (
@@ -44,11 +47,13 @@ const ResultadoEscaneo = ({product, productStatus}) => {
 
                     <div className='scannedProduct-pic-nav'>
                            <img 
-                                onClick={openModal} src='/img/icons/star_1.png' 
+                                onClick={()=>openModal('favs')} src='/img/icons/star_1.png' 
                                 className={'scannedProduct-pic-nav__icon ' + (productStatus === 'unknown' && 'scannedProduct-pic-nav__icon--disabled')} 
                                 alt='icono'/>
-                           <img src='/img/icons/diary.png' className='scannedProduct-pic-nav__icon' alt='icono'/>
-                           <img src={'/img/icons/share.png'} className='scannedProduct-pic-nav__icon' alt='icono'/>
+                           <img onClick={()=>openModal('diary')} src='/img/icons/diary.png' 
+                                className='scannedProduct-pic-nav__icon' 
+                                alt='icono'/>
+                           <img onClick={()=> navigate("/compartir")} src={'/img/icons/share.png'} className='scannedProduct-pic-nav__icon' alt='icono'/>
                     </div>
                 </div>
 
@@ -58,9 +63,15 @@ const ResultadoEscaneo = ({product, productStatus}) => {
                     <p className='scannedProduct-info__ing'>Ingredientes: {product.ingredients.join(', ')}</p>
                 </div>
 
-                <div className={'scannedProduct-modal-wrap ' + (showModal && 'scannedProduct-modal-wrap--visible')}>
-                    <ModalConfirm product={product} productStatus={productStatus} setShowModal={setShowModal} />
-                </div>           
+                {/* <div className={'scannedProduct-modal-wrap ' + (showModalFavs && 'scannedProduct-modal-wrap--visible')}> */}
+                    {showModalFavs
+                        ? <ModalConfirm product={product} productStatus={productStatus} setShowModalFavs={setShowModalFavs} />
+                        : showModalDiary
+                        ? <ModalDiario product={product} productStatus={productStatus} setShowModalDiary={setShowModalDiary}/>
+                        : undefined
+                    }
+
+                {/* </div>            */}
             </div>
     
         }
