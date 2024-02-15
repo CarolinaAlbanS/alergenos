@@ -80,6 +80,11 @@ $esmeralda : rgb(51, 154, 116);
             &__icon {
                 width: 25px;
                 cursor: pointer;
+
+                &--disabled {
+                    opacity: .5;
+                    pointer-events: none;
+                }
             }
         }
     }
