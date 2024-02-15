@@ -1,19 +1,24 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Login = () => {
   const { register, handleSubmit, watch } = useForm();
+  const navigate = useNavigate();
 
-  useEffect(() => {}, []);
+  // useEffect(() => {}, []);
 
   //se ejecuta al enviar formulario
   const onSubmit = async (data) => {
-    console.log(data);
-    const res = await axios
-      .post("http://localhost:3001/users/authenticate", data)
-      .then((res) => localStorage.setItem("id", res.data.data.user._id));
+    try {
+      const res = await axios
+        .post("http://localhost:3001/users/authenticate", data)
+        .then((res) => localStorage.setItem("id", res.data.data.user._id));
+      navigate("/");
+    } catch (error) {
+      console.error("Error en la peticion", error);
+    }
   };
   return (
     <>

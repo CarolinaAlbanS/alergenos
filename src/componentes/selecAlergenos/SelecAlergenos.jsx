@@ -1,9 +1,10 @@
 //hago un array con todos los alergenos dentro el recorreocon un for y hago un boton que filtre
 // por cada una de las primera letras que hay
-import React from "react";
+import React, { useContext } from "react";
 import axios from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { AlergenosContext } from "../../context/context";
 
 const SelecAlergenos = () => {
   const alimentos = {
@@ -41,10 +42,11 @@ const SelecAlergenos = () => {
     Y: ["Yuca"],
   };
   const id = localStorage.getItem("id");
-  const [inputValue, setInputValue] = useState([]);
+  const { alergias, setAlergias } = useContext(AlergenosContext);
 
   const handleInputChange = (alimento) => {
-    setInputValue([...inputValue, alimento]);
+    setAlergias([...alergias, alimento]);
+    console.log(alergias);
   };
 
   return (
@@ -70,6 +72,9 @@ const SelecAlergenos = () => {
           </div>
         ))}
       </div>
+      <Link to="/confirmacion">
+        <button>Guardar</button>
+      </Link>
     </div>
   );
 };

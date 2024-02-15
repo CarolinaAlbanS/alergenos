@@ -12,6 +12,8 @@ import Terminos from "./paginas/terminos/Terminos";
 import Valoracion from "./paginas/valoracion/Valoracion";
 import Emergencia from "./componentes/emergencia/Emergencia";
 import SelecAlergenos from "./componentes/selecAlergenos/SelecAlergenos";
+
+import ConfirAlergenos from "./componentes/confirAlergenos/ConfirAlergenos";
 import Compartir from "./paginas/compartir/Compartir";
 
 
@@ -20,7 +22,6 @@ import FinishRegistro from "./componentes/finalRegistro/FinishRegistro";
 
 import Portada from "./componentes/portada/Portada";
 import Perfil from "./componentes/perfil/Perfil";
-
 
 
 function App() {
@@ -47,6 +48,9 @@ function App() {
           <Route path="/emergencia" element={<Emergencia />}></Route>
           <Route path="/alergenos" element={<SelecAlergenos />}></Route>
 
+          <Route path="/confirmacion" element={<ConfirAlergenos />}></Route>
+
+
           <Route path="/compartir" element={<Compartir />}></Route>
          
 
@@ -56,6 +60,7 @@ function App() {
 
           
          
+
 
 
 

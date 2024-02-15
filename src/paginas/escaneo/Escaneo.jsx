@@ -3,9 +3,11 @@ import './Escaneo.scss';
 import {useState, useEffect} from "react";
 import axios from 'axios';
 import ResultadoEscaneo from "../../componentes/resultadoEscaneo/ResultadoEscaneo";
+import { useNavigate } from 'react-router-dom';
 
 //esto es PÁGINA
 const Escaneo = () => {
+  let navigate = useNavigate();
 
   const [scanCode, setScanCode] = useState(null); //numero
   const [product, setProduct] = useState(null); //json
@@ -100,6 +102,8 @@ const Escaneo = () => {
 
     getProduct();
 
+  
+
   }, [scanCode]);
 
   const resultMsg = {
@@ -112,7 +116,9 @@ const Escaneo = () => {
     <div className="scan-wrapper">
 
         <div className="scan">
-            <img className="scan__close" src="/img/icons/close.png" alt="icono cerrar"/>
+              
+                <img className="scan__close" src="/img/icons/close.png" alt="icono cerrar" onClick={()=>navigate(-1)}/>    
+            
 
             {productStatus 
               ? <span className="scan__title">Aquí tienes tu resultado</span>

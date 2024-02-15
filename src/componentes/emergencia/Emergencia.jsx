@@ -1,18 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 
 const Emergencia = () => {
   const id = localStorage.getItem("id");
   const { register, handleSubmit } = useForm();
+  const navigate = useNavigate();
   const onSubmit = async (data) => {
-    const emergency = data;
-    const res = await axios.patch(
-      `http://localhost:3001/users/${id}`,
-      emergency
-    );
-    console.log(res);
+    try {
+      const res = await axios.patch(`http://localhost:3001/users/${id}`, data);
+      console.log(res);
+      navigate("/alergenos");
+    } catch (error) {
+      console.error("fallo en la llamada:", error);
+    }
   };
 
   return (
@@ -57,13 +59,10 @@ const Emergencia = () => {
           {...register("emergency.seguro", { required: true })}
           placeholder="Compañia de seguros ó Nº poliza"
         ></input>
-        <button>Guardar emergencias</button>
+        <button>Guardar</button>
       </form>
       <Link to="/inicio">
         Registrar mi contacto de emergencias en otro momento
-      </Link>
-      <Link to="/alergenos">
-        <button>Siguiente</button>
       </Link>
     </div>
   );
