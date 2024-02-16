@@ -6,14 +6,20 @@ import axios from "axios";
 
 const ConfirAlergenos = () => {
   const id = localStorage.getItem("id");
+  const token = localStorage.getItem("token");
+
   const navigate = useNavigate();
   const { alergias } = useContext(AlergenosContext);
+  console.log(alergias);
   const handleSubmit = async () => {
     try {
-      const res = await axios.patch(`http://localhost:3001/users/${id}`, {
-        allergens: alergias,
-      });
-      navigate("/finalRegistro");
+      const res = await axios.patch(
+        `http://localhost:3001/users/${id}`,
+        { allergens: alergias },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      console.log(res);
+      navigate("/finishRegistro");
     } catch (error) {
       console.error("Error rn la peticion", error);
     }

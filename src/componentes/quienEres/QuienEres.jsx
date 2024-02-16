@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const QuienEres = () => {
   const { register, handleSubmit } = useForm();
+  const navigate = useNavigate();
+
   const onSubmit = async (data) => {
     try {
       console.log(data);
@@ -12,7 +14,7 @@ const QuienEres = () => {
       const cli = res.data.data._id;
       console.log(cli);
       localStorage.setItem("id", cli);
-      navigator("/emergencia");
+      navigate("/confirCuenta");
     } catch (error) {
       console.error("fallo en la llamada", error);
     }

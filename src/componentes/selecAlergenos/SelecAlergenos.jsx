@@ -41,13 +41,14 @@ const SelecAlergenos = () => {
     V: ["Vitamina D", "Vitamina E"],
     Y: ["Yuca"],
   };
+  const token = localStorage.getItem("token");
   const id = localStorage.getItem("id");
   const { alergias, setAlergias } = useContext(AlergenosContext);
 
   const handleInputChange = (alimento) => {
     setAlergias([...alergias, alimento]);
-    console.log(alergias);
   };
+  console.log(alergias);
 
   return (
     <div>

@@ -5,11 +5,20 @@ import axios from "axios";
 
 const Emergencia = () => {
   const id = localStorage.getItem("id");
+  console.log(id);
+  const token = localStorage.getItem("token");
+  console.log(token);
+
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
   const onSubmit = async (data) => {
     try {
-      const res = await axios.patch(`http://localhost:3001/users/${id}`, data);
+      const res = await axios.patch(
+        `http://localhost:3001/users/${id}`,
+        { emergency: [data] },
+        { headers: { Authorization: `Bearer ${token}` } },
+        console.log(data)
+      );
       console.log(res);
       navigate("/alergenos");
     } catch (error) {
@@ -20,7 +29,7 @@ const Emergencia = () => {
   return (
     <div>
       <div>
-        <Link to="/login">volver</Link>
+        <Link to="/registro">volver</Link>
       </div>
       <div>
         <p>2 de 4</p>
@@ -35,28 +44,28 @@ const Emergencia = () => {
         <input
           type="text"
           id="name"
-          {...register("emergency.name", { required: true })}
+          {...register("name", { required: true })}
           placeholder="Dirección de email"
         ></input>
         <label htmlFor="email"></label>
         <input
           type="email"
           id="email"
-          {...register("emergency.email", { required: true })}
+          {...register("email", { required: true })}
           placeholder="Dirección de email"
         ></input>
         <label htmlFor="phone"></label>
         <input
           type="numbre"
           id="phone"
-          {...register("emergency.phone", { required: true })}
+          {...register("phone", { required: true })}
           placeholder="Móvil"
         ></input>
         <label htmlFor="seguro"></label>
         <input
           type="text"
           id="seguro"
-          {...register("emergency.seguro", { required: true })}
+          {...register("seguro", { required: true })}
           placeholder="Compañia de seguros ó Nº poliza"
         ></input>
         <button>Guardar</button>

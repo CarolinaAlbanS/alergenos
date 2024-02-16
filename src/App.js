@@ -21,6 +21,7 @@ import FinishRegistro from "./componentes/finalRegistro/FinishRegistro";
 import Portada from "./componentes/portada/Portada";
 import Perfil from "./componentes/perfil/Perfil";
 import Logout from "./paginas/logout/Logout";
+import ConfirCuenta from "./componentes/confirmarCuenta/ConfirCuenta";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path="/valoracion" element={<Valoracion />}></Route>
           <Route path="/" element={<Portada />}></Route>
           <Route path="/logout" element={<Logout />}></Route>
+          <Route path="/confirCuenta" element={<ConfirCuenta />}></Route>
 
           <Route path="/inicio" element={<Inicio />}></Route>
           <Route path="/emergencia" element={<Emergencia />}></Route>
