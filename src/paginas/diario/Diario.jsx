@@ -3,57 +3,63 @@ import "./Diario.scss";
 import axios from "axios";
 
 const Diario = () => {
-  const id = localStorage.getItem("id");
-  const userToken = localStorage.getItem("token");
+  const userId = localStorage.getItem("id");
+  const token = localStorage.getItem("token");
 
-  console.log(id);
+  console.log(token);
+  console.log(userId);
+
   const [diario, setDiario] = useState([]);
 
   useEffect(() => {
-    const getDiario = async () => {
-      const res = await axios.get(`http://localhost:3001/users/${id}`);
-      const alimento = res.data.data.diario;
-      setDiario(alimento);
-      console.log(diario);
-    };
-    getDiario();
+    resetDiario();
   }, []);
-  console.log(diario);
 
-  const eliminarNota = async (index) => {
-    const res2 = await axios.patch(
-      `http://localhost:3001/users/${id}`,
-      { diario: diario },
-      { headers: { Authorization: `Bearer ${userToken}` } }
-    );
-    console.log(res2);
+  const eliminarEntrada = async (entradaId) => {
+    try {
+      await axios.delete(
+        `http://localhost:3001/users/${userId}/diario/${entradaId}`,
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      resetDiario();
+    } catch (e) {
+      console.log(e);
+    }
   };
+
+  const resetDiario = async () => {
+    const res = await axios.get(`http://localhost:3001/users/${userId}`);
+    const alimento = res.data.data.diario;
+    setDiario(alimento);
+  };
+
   return (
     <div>
       <div>
-        {diario.map((nota, index) => (
-          <div key={index}>
-            <p>{nota.fecha}</p>
-            <p>{nota.comentario}</p>
-            <div>
-              {nota.producto.map((alimento, index) => (
-                <div key={index}>
-                  <p>{alimento.name}</p>
-                  <img src={alimento.image} />
-                  <button
-                    onClick={() => {
-                      eliminarNota(alimento.id);
-                    }}
-                  >
-                    X
-                  </button>
-                </div>
-              ))}
+        {diario &&
+          diario.map((entrada, index) => (
+            <div key={index}>
+              <p>{entrada.fecha}</p>
+              <p>{entrada.comentario}</p>
+              <div>
+                {entrada.producto.map((alimento, index) => (
+                  <div key={index}>
+                    <p>{alimento.name}</p>
+                    <img src={alimento.image} />
+                    <button
+                      onClick={async () => {
+                        console.log(entrada);
+                        eliminarEntrada(entrada._id);
+                      }}
+                    >
+                      X
+                    </button>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
       </div>
-      <div>for</div>
     </div>
   );
 };
