@@ -21,7 +21,8 @@ import FinishRegistro from "./componentes/finalRegistro/FinishRegistro";
 import Portada from "./componentes/portada/Portada";
 import Perfil from "./componentes/perfil/Perfil";
 import Logout from "./paginas/logout/Logout";
-import ConfirCuenta from "./componentes/confirmarCuenta/ConfirCuenta";
+import ConfirCuenta from "./componentes/confirmarCuenta/ConfirCuenta"
+import Informe from "./paginas/informe/Informe";
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
           <Route path="/compartir" element={<Compartir />}></Route>
 
           <Route path="/perfil" element={<Perfil />}></Route>
+          <Route path="/informe" element={<Informe />}></Route>
           <Route path="/finishRegistro" element={<FinishRegistro />}></Route>
         </Routes>
       </BrowserRouter>

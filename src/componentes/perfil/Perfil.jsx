@@ -51,7 +51,8 @@ function Perfil() {
           <p key={index}>{users}</p>
         ))}
       </div>
-      {/* <div className="contactoEmergencia">
+      
+      {userData.emergency && <div className="contactoEmergencia">
         <h4>Contacto de emergencia:</h4>
         <p>Nombre:</p>
         <p>{userData.emergency.name}</p>
@@ -59,7 +60,7 @@ function Perfil() {
         <p>{userData.emergency.phone}</p>
         <p>Compañia:</p>
         <p>{userData.emergency.seguro}</p>
-      </div> */}
+      </div>}
     </div>
   );
 }

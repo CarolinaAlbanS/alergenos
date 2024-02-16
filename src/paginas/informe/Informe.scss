@@ -1,0 +1,126 @@
+$esmeralda : rgb(51, 154, 116);
+
+.informe-wrapper {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.informe {
+
+    width: 90vw;
+    // height: 90vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    &-top {
+
+        display: flex;
+        justify-content: space-between;   
+        width: 100%;
+        align-items: center;
+        
+        &-btns {
+            display: flex;
+            gap: 10px;
+            
+            &__btn {
+                padding: 6px 15px;
+                background-color: $esmeralda;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                width: 90%;
+                cursor: pointer;
+            }
+        }
+
+        &__close {
+            
+            margin-left: auto;
+            width: 20px;
+            cursor: pointer;
+        }
+    }
+
+    &-data {
+
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        &__title {
+            font-weight: bold;
+            display: block;
+            text-align: center;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        
+        &__date {
+            color: gray;
+            font-size: 14px;
+        }
+        
+        &__lang {
+            font-weight: bold;
+            color: $esmeralda;
+            text-decoration: underline;
+        }
+
+        &-user {
+            border: 1px solid gray;
+            padding: 15px;
+
+            &__name {
+                font-weight: bold;
+            }
+
+            &__aller {
+                color: #c03333;
+                margin-top: 7px;
+            }
+        }
+
+        &-ul {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            text-align: left;
+
+            &-li {
+                border: 1px solid gray;
+                padding: 5px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 7px;
+
+                &__img {
+                    width: 30%;
+                }
+
+                &-info {
+                    width: 60%;
+                }
+            }
+
+        }
+    }
+
+    &__btn {
+        padding: 10px;
+        background-color: $esmeralda;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        width: 90%;
+        cursor: pointer;
+        width: 100%;
+    }
+}
