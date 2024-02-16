@@ -1,56 +1,158 @@
-.imagenAlergenosInicio{
-    width: 200px;
+@media only screen and (max-width: 1000px) {
+    .imagenAlergenosInicio{
+        width: 200px; 
+        
+    }
     
+    .contenedorInicio{
+         align-items: center;
+         display: flex;
+         margin-top: 100px;
+        flex-direction: column;
+        margin-bottom: 100px;
+    }
     
+    .contenedorBotones{
+        margin-top: 50px;
+        align-items: center;
+        text-align: center;
+        display: flex;
+       flex-direction: column;
+       row-gap: 20px;
+    }
+    
+    .botonEscanear{
+        background-color: #2BBEE2;
+        color: white;
+        width: 320px;
+        height: 35px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 20px;
+    }
+    
+    .botonBuscar{
+        background-color: #AABCCF;
+        color: white;
+        width: 320px;
+        height: 35px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 20px;
+    }
+    
+    .botonEmergencia{
+        background-color: #D182AB;
+        color: white;
+        width: 320px;
+        height: 35px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 20px;
+    }
+    
+    .botonesIconos{
+        width: 30px;
+        color: white;
+    }
+    
+    .parrafosInicio{
+        font-size: 20px;
+    }
+    
+    .numeroTelefono{
+        color: red;
+    }
 }
 
-.contenedorInicio{
-     align-items: center;
-     display: flex;
-     
-    flex-direction: column;
-}
 
-.contenedorBotones{
-    margin-top: 50px;
-    align-items: center;
-    text-align: center;
-    display: flex;
-   flex-direction: column;
-   row-gap: 10px;
-}
-
-.botonEscanear{
-    background-color: #2BBEE2;
-    color: white;
-    width: 300px;
-    height: 30px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.botonBuscar{
-    background-color: #AABCCF;
-    color: white;
-    width: 300px;
-    height: 30px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.botonEmergencia{
-    background-color: #D182AB;
-    color: white;
-    width: 300px;
-    height: 30px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.botonesIconos{
-    width: 20px;
-    color: white;
+@media only screen and (min-width: 1000px){
+    .imagenAlergenosInicio{
+        width: 300px; 
+        
+    }
+    
+    .contenedorInicio{
+         align-items: center;
+         display: flex;
+         margin-top: 10px;
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+    
+    .contenedorBotones{
+        margin-top: 50px;
+        align-items: center;
+        text-align: center;
+        display: flex;
+       flex-direction: column;
+       row-gap: 30px;
+    }
+    
+    .botonEscanear{
+        background-color: #2BBEE2;
+        color: white;
+        width: 600px;
+        height: 60px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 30px;
+    }
+    
+    .botonBuscar{
+        background-color: #AABCCF;
+        color: white;
+        width: 600px;
+        height: 60px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 30px;
+    }
+    
+    .botonEmergencia{
+        background-color: #D182AB;
+        color: white;
+        width: 600px;
+        height: 60px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 30px;
+    }
+    
+    .botonesIconos{
+        width: 50px;
+        color: white;
+    }
+    
+    .parrafosInicio{
+        font-size: 30px;
+    }
+    
+    .numeroTelefono{
+        color: red;
+    }
 }
