@@ -9,16 +9,10 @@ const Logout = () => {
   console.log(id);
   const navigate = useNavigate();
   const handleLogout = async (id) => {
-    // try {
-    //   const res = await axios.post("http://localhost:3001/users/logout");
+    const res = await axios.post("http://localhost:3001/users/logout");
     navigate("/");
     localStorage.removeItem("id");
     localStorage.removeItem("token");
-
-    // console.log(res);
-    // } catch (error) {
-    //   console.error("fallo en la llamada", error);
-    // }
   };
 
   return (
