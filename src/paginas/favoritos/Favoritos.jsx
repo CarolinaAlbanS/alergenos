@@ -10,6 +10,8 @@ const Favoritos = () => {
   const [favorites, setFavorites] = useState([]);
   const userId = localStorage.getItem('id');
 
+  const userToken = localStorage.getItem("token");
+    console.log(userToken, 'token');
 
   useEffect(() => {
     const getFavorites = async () => {

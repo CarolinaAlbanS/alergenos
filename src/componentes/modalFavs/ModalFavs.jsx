@@ -3,7 +3,7 @@ import './ModalFavs.scss';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const ModalFavs = ({product, productStatus, setShowModal}) => {
+const ModalFavs = ({product, productStatus, setShowModalFavs}) => {
 
     const navigate = useNavigate();
 
@@ -12,10 +12,11 @@ const ModalFavs = ({product, productStatus, setShowModal}) => {
         unknown: '¿Seguro que quieres añadir este producto a favoritos? No tenemos suficiente información como para garantizar que no contenga alérgenos',
         ok: '¿Quieres añadir este producto a favoritos?'
     }
-
+    
     const addToFavs = async (product) => {
         try {
             const userId = localStorage.getItem("id");
+            const userToken = localStorage.getItem("token");
             //buscar el id del producto escaneado en nuestra colección
             const productMongo = await axios.get(`http://localhost:3001/productos/code/${product.barcode}`)
             const productId = productMongo.data.data._id;
@@ -25,7 +26,10 @@ const ModalFavs = ({product, productStatus, setShowModal}) => {
             //recuperar el array de ids de productos favoritos del usuario
             const userFavsArr = user.data.data.favorites.map(fav => fav._id);
 
-            const patchFavs = await axios.patch(`http://localhost:3001/users/${userId}`, {favorites: [...userFavsArr, productId]});
+            await axios.patch(`http://localhost:3001/users/${userId}`,
+                {favorites: [...userFavsArr, productId]}, 
+                {headers: { Authorization: `Bearer ${userToken}`}}
+            );
 
     
             console.log('Producto añadido a favoritos:');
@@ -50,7 +54,7 @@ const ModalFavs = ({product, productStatus, setShowModal}) => {
                         className={'modal-box-btns__btn ' + (productStatus === 'ok' && 'modal-box-btns__btn--default')}>AÑADIR A FAVORITOS
                     </button>
                     <button 
-                        onClick={()=>setShowModal(false)}
+                        onClick={()=>setShowModalFavs(false)}
                         className={'modal-box-btns__btn ' + (productStatus !== 'ok' && 'modal-box-btns__btn--default')}>CANCELAR
                     </button>
                 </div>
@@ -63,11 +67,11 @@ const ModalFavs = ({product, productStatus, setShowModal}) => {
 
                 <div className='modal-box-btns'>
                     <button 
-                        onClick={()=>{setShowModal(false); setModalContent('a')}}
+                        onClick={()=>{setShowModalFavs(false); setModalContent('a')}}
                         className='modal-box-btns__btn modal-box-btns__btn--default'>OK
                     </button>
                     <button 
-                        onClick={()=> {setShowModal(false); navigate('/favoritos')}}
+                        onClick={()=> {setShowModalFavs(false); navigate('/favoritos')}}
                         className='modal-box-btns__btn'>IR A FAVORITOS
                     </button>
                 </div>
