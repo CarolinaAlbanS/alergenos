@@ -8,7 +8,7 @@ import { useForm } from 'react-hook-form';
 const ModalDiario = ({product, productStatus, setShowModalDiary}) => {
 
     const navigate = useNavigate();
-    const {register, handleSubmit, watch} = useForm();
+    const {register, handleSubmit} = useForm();
     const [comment, setComment] = useState('');
 
     const storeComment = (newComment) => {
@@ -31,7 +31,6 @@ const ModalDiario = ({product, productStatus, setShowModalDiary}) => {
             //buscar el id del producto escaneado en nuestra colección
             const productMongo = await axios.get(`http://localhost:3001/productos/code/${product.barcode}`)
             const productId = productMongo.data.data._id;
-
 
             const newProd = {
                 producto: productId,
