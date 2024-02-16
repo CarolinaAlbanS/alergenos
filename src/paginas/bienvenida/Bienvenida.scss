@@ -32,7 +32,6 @@ img.logo {
 }
 .item4 {
     width: 232pt;
-    height: 232pt;
     margin: auto;
     display: block;
 }
@@ -69,7 +68,7 @@ img.logo {
     background: #00BCD4;
     
 }
-button.siguiente {
+button.Siguiente {
     margin-left: 210px;
     background: white;
     border: white;
@@ -88,4 +87,11 @@ button.siguiente {
 }
 .owl-stage {
     margin-bottom: 10px;
+}
+button.Terminar {
+    margin-left: 210px;
+    background: white;
+    border: white;
+    font-size: 15px;
+    justify-content: flex-end;
 }
