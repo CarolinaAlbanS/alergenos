@@ -1,0 +1,98 @@
+
+
+@media only screen and (max-width: 1000px) {
+
+    .contenedorConfirmarAlergia{
+        margin: 10%;
+    }
+
+    .contenedorBotonAlergias{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+   
+    .botonSeleccionAlergia{
+        background-color: #D3598C;
+        color: white;
+        border: none;
+        border-radius: 10%;
+        width: 100pt;
+        height: 20pt;
+    }
+   
+    .contenedorAñadirConfirmar{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .botonConfirmarAlergias{
+        background-color: #2BBEE2;
+        color: white;
+        border: none;
+        border-radius: 10%;
+        width: 180px;
+        height: 30px;
+    }
+   
+    .botonAñadirAlergia{
+        background-color: white;
+        border-radius: 10%;
+        width: 100pt;
+        height: 25pt;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .contenedorConfirmarAlergia{
+        margin: 10%;
+    }
+
+    .contenedorBotonAlergias{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 80px;
+        margin-bottom: 60px;
+    }
+   
+    .botonSeleccionAlergia{
+        background-color: #D3598C;
+        color: white;
+        border: none;
+        border-radius: 10%;
+        width: 200pt;
+        height: 40pt;
+    }
+   
+    .contenedorAñadirConfirmar{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+    }
+
+    .botonConfirmarAlergias{
+        background-color: #2BBEE2;
+        color: white;
+        border: none;
+        border-radius: 10%;
+        width: 360px;
+        height: 60px;
+    }
+   
+    .botonAñadirAlergia{
+        background-color: white;
+        border-radius: 10%;
+        width: 200pt;
+        height: 50pt;
+    }
+}
