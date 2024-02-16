@@ -1,3 +1,5 @@
+$esmeralda : rgb(51, 154, 116);
+
 .login{
 
     &-portada {
@@ -13,8 +15,55 @@
         padding-top: 30px;
 
         &-txt {
+            margin-bottom: 20px;
             &__h2 {
                 margin-bottom: 15px;
+            }
+        }
+
+        &-form {
+
+            &__input {
+                border: none;
+                border-bottom: 1px solid gray;
+                padding: 10px 10px 10px 0;
+                margin-bottom: 25px;
+                width: 100%;
+            }
+
+            &__recuperar {
+                color: $esmeralda;
+                font-size: 13px;
+                font-weight: bold;
+            }
+
+            &__btn {
+                border-radius: 5px;
+                cursor: pointer;
+                border: none;
+                padding: 10px;
+                background-color: $esmeralda;
+                margin: 20px 0;
+                width: 100%;
+            }
+        }
+
+        &-opt {
+            text-align: center;
+
+            &__new {
+                font-size: 14px;
+                color: gray;
+                margin-bottom: 7px;
+            }
+
+            &__crea {
+                color: $esmeralda;
+                margin-bottom: 25px;
+            }
+
+            &__otro {
+                font-size: 13px;
             }
         }
     }
