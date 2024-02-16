@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import './Login.scss';
 
 const Login = () => {
   const { register, handleSubmit, watch } = useForm();
@@ -25,9 +26,9 @@ const Login = () => {
     }
   };
   return (
-    <>
-      <div>
-        <img src="/img/image@3x.png" />
+    <div className="login">
+      <div className="login-portada">
+        <img className="login-portada__img" src="/img/image@3x.png" alt="portada login: imagen de comida"/>
       </div>
       <div>
         <h2>¡Bienvenido de nuevo!</h2>
@@ -64,7 +65,7 @@ const Login = () => {
           <p>Me registraré en otro momento</p>
         </Link>
       </div>
-    </>
+    </div>
   );
 };
 
