@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './ResultadoEscaneo.scss';
-import ModalConfirm from '../modalFavs/ModalFavs';
+import ModalFavs from '../modalFavs/ModalFavs';
 import { useNavigate } from 'react-router-dom';
 import ModalDiario from '../modalDiario/ModalDiario';
 
@@ -65,7 +65,7 @@ const ResultadoEscaneo = ({product, productStatus}) => {
 
                 {/* <div className={'scannedProduct-modal-wrap ' + (showModalFavs && 'scannedProduct-modal-wrap--visible')}> */}
                     {showModalFavs
-                        ? <ModalConfirm product={product} productStatus={productStatus} setShowModalFavs={setShowModalFavs} />
+                        ? <ModalFavs product={product} productStatus={productStatus} setShowModalFavs={setShowModalFavs} />
                         : showModalDiary
                         ? <ModalDiario product={product} productStatus={productStatus} setShowModalDiary={setShowModalDiary}/>
                         : undefined
