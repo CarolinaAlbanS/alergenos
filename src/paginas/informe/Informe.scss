@@ -111,6 +111,10 @@ $esmeralda : rgb(51, 154, 116);
 
                 &-info {
                     width: 60%;
+
+                    &__p {
+                        text-align: left;
+                    }
                 }
             }
 
