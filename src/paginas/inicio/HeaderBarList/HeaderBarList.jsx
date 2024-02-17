@@ -53,14 +53,21 @@ export default function BurgerBar() {
               </li>
             </Link>
 
+
+           
+
             <Link to={"/perfil"} className="links">
              <li className="liHeaderBarList"> <img src="./img/icons/user.png" alt="logo" className="imagenHeaderBarList" /> Perfil</li>
             </Link>
 
+
              
-             <Link to={"/favoritos"} className="links">
-               <li className="liHeaderBarList"> <img src="./img/icons/star_1.png" alt="logo" className="imagenHeaderBarList" /> Favorito</li>
-             </Link>
+             
+
+
+             
+
+             
 
              <Link to={"/diario"}>   
               <li className="liHeaderBarList"> <img src="./img/icons/diary.png" alt="logo" className="imagenHeaderBarList" /> Diario</li>
@@ -70,6 +77,7 @@ export default function BurgerBar() {
               <li className="liHeaderBarList"> <img src="./img/icons/share.png" alt="logo" className="imagenHeaderBarList" />Compartir</li>
              </Link>
 
+
              <Link to={"/traductor"}>
               <li className="liHeaderBarList"> <img src="./img/icons/translation.png" alt="logo" className="imagenHeaderBarList" /> Traductor</li>
              </Link>
@@ -78,9 +86,7 @@ export default function BurgerBar() {
                 <li className="liHeaderBarList"> <img src="./img/icons/terms.png" alt="logo" className="imagenHeaderBarList" /> Terminos</li>
              </Link>
 
-             <Link to={"/login"}>   
-              <li className="liHeaderBarList"> <img src="./img/icons/exit.png" alt="logo" className="imagenHeaderBarList" /> Salir</li>
-             </Link>
+             
 
             <Link to={"/logout"}>
                     <li className="liHeaderBarList">
@@ -99,3 +105,4 @@ export default function BurgerBar() {
 }
 
       
+
