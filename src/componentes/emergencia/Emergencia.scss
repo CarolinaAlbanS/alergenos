@@ -1,0 +1,26 @@
+$esmeralda : rgb(51, 154, 116);
+
+.emergencia{
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    &-superior{
+        display: flex;
+        justify-content: flex-start;
+        &__p{
+            margin-left: 30%;
+        }
+    }
+    &-wrap{
+        width: 90vw;
+        margin: 0 auto;
+        padding-top: 30px;
+        &.text{
+            margin-bottom: 20px;
+            &__h2{
+                margin-bottom: 5%;
+            }
+
+        }
+    }
+}
