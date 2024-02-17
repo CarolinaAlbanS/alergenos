@@ -2,6 +2,7 @@ import Escanear from "../../componentes/escanear/Escanear"
 import './Escaneo.scss';
 import {useState, useEffect} from "react";
 import axios from 'axios';
+import {useTranslation} from "react-i18next";
 import ResultadoEscaneo from "../../componentes/resultadoEscaneo/ResultadoEscaneo";
 import { useNavigate } from 'react-router-dom';
 
@@ -13,6 +14,9 @@ const Escaneo = () => {
   const [product, setProduct] = useState(null); //json
   const [productStatus, setProductStatus] = useState(null);
   const [scanType, setScanType] = useState('código de barras');
+  const [userAllergies, setUserAllergies] = useState();
+  const [t, i18n] = useTranslation("global");
+  const [matchedAllergens, setMatchedAllergens] = useState([]);
 
   const unknownProduct =  {
     name : 'producto desconocido',
@@ -22,14 +26,15 @@ const Escaneo = () => {
   const urlFoodFacts = 'https://world.openfoodfacts.org/api/v2/product/';
 
   //datos fake, sustituir por datos usuario
-  const userAllergies = ['milk', 'nuts'];
+  // const userAllergies = ['milk', 'nuts'];
 
   useEffect(() => {
 
+    //guardar producto en nuestra colección de productos de mongo
     const saveProduct = async (product) => {
       try {
         console.log(product);
-        const newProduct = await axios.post('http://localhost:3001/productos/create', product);
+        await axios.post('http://localhost:3001/productos/create', product);
 
         console.log('Producto guardado con éxito');
       } catch (err) {
@@ -37,6 +42,38 @@ const Escaneo = () => {
       }
     }
 
+    //recoger los datos del usuario para recuperar sus alergias
+    const getUser = async () => {
+      const userId = localStorage.getItem('id');
+      try {
+        const user = await axios.get(`http://localhost:3001/users/${userId}`);
+        setUserAllergies(user.data.data.allergens);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    getUser();
+
+    //comprobar si los alérgenos del producto coinciden con alergias del usuario
+    const checkAllergens = () => {
+      const translatedUserAllergens = []
+
+      userAllergies.forEach(al => {
+        translatedUserAllergens.push(t(`allergens.${al}`))
+      })
+      console.log(translatedUserAllergens);
+
+      translatedUserAllergens.forEach(al => {
+        if (product.allergens.contains(al)) {
+          setMatchedAllergens([...setMatchedAllergens, al])
+        }
+      })
+
+      matchedAllergens.length ? setProductStatus('warn') : setProductStatus('ok');
+      product.ingredients && setProductStatus('unknown');
+    }
+
+    //buscar el producto por código de barras en Open Food Facts
     const getProduct = async () => {
       try {
         const foodFactsResponse = await axios.get(`${urlFoodFacts}${scanCode}`);
@@ -48,8 +85,10 @@ const Escaneo = () => {
 
         //si producto SI está en Open Food Facts
         } else if ( foodFactsResponse.data.status_verbose === "product found"){
+
           const productJson = foodFactsResponse.data.product;
           console.log('producto encontrado');
+
           //recoger propiedades que utilizaremos
           const mappedProduct =  {
             name : productJson.product_name,
@@ -59,6 +98,7 @@ const Escaneo = () => {
                       : Array(productJson.brands),
             image: productJson.image_url ? productJson.image_url : '',
             ingredients : productJson.ingredients ? productJson.ingredients.map(ing => ing.text) : [''],
+
             // traces: productJson.traces,
             allergens: Array.isArray(productJson.allergens) 
                         ? productJson.allergens.map(al => al.split(':').at(-1))
@@ -66,25 +106,12 @@ const Escaneo = () => {
             barcode: productJson.code
           }
 
-
           setProduct(mappedProduct);
-          console.log(mappedProduct, 'aquí');
           saveProduct(mappedProduct);
+
           //si producto tiene posibles alérgenos cotejar con alergias del usuario
           if (mappedProduct.allergens) {
-            let hasAllergens = [];
-            console.log(mappedProduct.allergens);
-            console.log(userAllergies);
-
-            for (const allrgn of mappedProduct.allergens) {
-
-              //si tiene algún alérgeno traquearlo en un array
-              if(userAllergies.includes(allrgn)) {
-                hasAllergens.push(allrgn)
-              } 
-            };
-
-            hasAllergens.length ? setProductStatus('warn') : setProductStatus('ok');
+            checkAllergens();
           } else {
             setProductStatus('ok');
           }
