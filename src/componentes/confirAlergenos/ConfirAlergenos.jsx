@@ -3,7 +3,9 @@ import SelecAlergenos from "../selecAlergenos/SelecAlergenos";
 import { AlergenosContext } from "../../context/context";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import "./ConfirAlergenos.scss";
+
+import './ConfirAlergenos.scss';
+
 
 const ConfirAlergenos = () => {
   const id = localStorage.getItem("id");
@@ -46,19 +48,27 @@ const ConfirAlergenos = () => {
       </div>
       <div className="contenedorBotonAlergias">
         {alergias.map((alergia, index) => (
+
+          <div key={index}>
+
           <div onClick={() => eliminarAlergia(index)} key={index}>
+
             <button className="botonSeleccionAlergia">{alergia}</button>
           </div>
         ))}
       </div>
       <div className="contenedorAñadirConfirmar">
-        <Link to="/alergenos">
-          <button className="botonAñadirAlergia">Añadir nuevos</button>
-        </Link>
+
+      <Link to="/alergenos">
+        <button className="botonAñadirAlergia">Añadir nuevos</button>
+      </Link>
+      
+      
 
         <button onClick={handleSubmit} className="botonConfirmarAlergias">
           Confirmar
         </button>
+
       </div>
     </div>
   );
