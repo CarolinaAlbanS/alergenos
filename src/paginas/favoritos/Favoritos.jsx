@@ -7,6 +7,7 @@ const Favoritos = () => {
   const navigate = useNavigate();
 
   const [favorites, setFavorites] = useState([]);
+
   const userId = localStorage.getItem("id");
   const token = localStorage.getItem("token");
   console.log(token);
@@ -16,10 +17,10 @@ const Favoritos = () => {
     getFavorites();
   }, []);
 
-  const eliminarEntrada = async (entradaId) => {
+  const eliminarEntrada = async (favId) => {
     try {
       await axios.delete(
-        `http://localhost:3001/users/${userId}/favorito/${entradaId}`,
+        `http://localhost:3001/users/${userId}/favorito/${favId}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       getFavorites();
@@ -33,6 +34,8 @@ const Favoritos = () => {
     const favsRes = res.data.data.favorites;
     setFavorites(favsRes);
   };
+  console.log(favorites);
+
   return (
     <div className="favoritos">
       <h3 className="favoritos__title">Favoritos</h3>
@@ -41,23 +44,23 @@ const Favoritos = () => {
           favorites.map((fav, i) => (
             <div className="favoritos-grid-item" key={i}>
               <img
+                className="favoritos-grid-item__imagen"
+                src="/img/icons/close.png"
+                onClick={async () => {
+                  eliminarEntrada(fav._id);
+                  console.log(fav._id);
+                }}
+              />
+              <img
                 src={fav.image ? fav.image : "/img/icons/product.jpeg"}
                 alt="{fav.name}"
                 className="favoritos-grid-item__img"
               />
               <span className="favoritos-grid-item__name">{fav.name}</span>
-              <button
-                onClick={async () => {
-                  console.log(fav);
-                  eliminarEntrada(fav._id);
-                }}
-              >
-                X
-              </button>
             </div>
           ))}
       </div>
-      <div>
+      <div className="favoritos__boton">
         <Link to="/escaneo"> Volver</Link>
       </div>
     </div>
