@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 
 export default function BurgerBar() {
   return (
+    <div className="burger">
     <nav>
       <ul className="listaHeaderBarList">
-
+        <div>
         <Link to={"/perfil"} className="perfil">
           <li className="liHeaderBarList">
             {" "}
@@ -17,7 +18,8 @@ export default function BurgerBar() {
             Perfil
           </li>
         </Link>
-
+        </div>
+        <div>
         <Link to={"/favoritos"} className="links">
           <li className="liHeaderBarList">
             {" "}
@@ -29,7 +31,8 @@ export default function BurgerBar() {
             Favorito
           </li>
         </Link>
-
+        </div>
+        <div>
         <Link to={"/diario"}>
           <li className="liHeaderBarList">
             {" "}
@@ -41,7 +44,8 @@ export default function BurgerBar() {
             Diario
           </li>
         </Link>
-
+        </div>
+        <div>
         <Link to={"/compartir"}>
           <li className="liHeaderBarList">
             {" "}
@@ -53,21 +57,20 @@ export default function BurgerBar() {
             Compartir
           </li>
         </Link>
-
+        </div>
+          <div>
              <Link to={"/traductor"}>
            
              <li className="liHeaderBarList"> <img src="./img/icons/translation.png" alt="logo" className="imagenHeaderBarList" /> Traductor</li>
              </Link>
-
+             </div>
+             <div>
              <Link to={"/terminos"}>
              
                 <li className="liHeaderBarList"> <img src="./img/icons/terms.png" alt="logo" className="imagenHeaderBarList" /> Terminos</li>
              </Link>
-
-             <Link to={"/login"}>   
-              <li className="liHeaderBarList"> <img src="./img/icons/exit.png" alt="logo" className="imagenHeaderBarList" /> Salir</li>
-             </Link>
-
+             </div>
+             
            <Link to={"/logout"}>
 
 
@@ -87,6 +90,7 @@ export default function BurgerBar() {
 
          </ul>
         </nav>
+      </div>
     )
 }
 
