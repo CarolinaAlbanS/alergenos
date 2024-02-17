@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Diario.scss";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Diario = () => {
   const userId = localStorage.getItem("id");
@@ -60,6 +61,9 @@ const Diario = () => {
             </div>
           ))}
       </div>
+      <Link to="/informe">
+        <button>Generar informe</button>
+      </Link>
     </div>
   );
 };

@@ -12,11 +12,14 @@ const ConfirCuenta = () => {
         .post("http://localhost:3001/users/authenticate", data)
         .then((res) => {
           localStorage.setItem("id", res.data.data.user._id);
+          console.log(res.data.data.user._id);
           localStorage.setItem("token", res.data.data.token);
+          console.log(res.data.data.token);
         });
       console.log(res);
 
       navigate("/emergencia");
+      // console.log(data);
     } catch (error) {
       console.error("Error en la peticion", error);
     }
