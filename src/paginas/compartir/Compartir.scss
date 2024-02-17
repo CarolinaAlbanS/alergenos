@@ -1,17 +1,36 @@
-.containerCompartir{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    row-gap: 70px;
-    column-gap: 30px;
-    align-items: center;
-    text-align: center;
-    position: absolute;
-    top: 5%;
-    max-width: 500px;
+@media only screen and (max-width: 1000px){
+    .containerCompartir{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 70px;
+        column-gap: 30px;
+        align-items: center;
+        text-align: center;
+        
+        max-width: 600px;
+        }
+    
+    
+    .imagenCompartir{
+        width: 150px;
     }
+}
 
-
-.imagenCompartir{
-    width: 150px;
+@media only screen and (min-width: 1000px){
+    .containerCompartir{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 120px;
+        column-gap: 200px;
+        align-items: center;
+        text-align: center;
+        
+        }
+    
+    
+    .imagenCompartir{
+        width: 300px;
+    }
 }

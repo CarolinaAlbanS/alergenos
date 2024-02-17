@@ -1,12 +1,14 @@
 //hago un array con todos los alergenos dentro el recorreocon un for y hago un boton que filtre
 // por cada una de las primera letras que hay
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AlergenosContext } from "../../context/context";
+import './SelecAlergenos.scss';
 
 const SelecAlergenos = () => {
+
   const alimentos = {
     A: [
       "Ácido benzoico",
@@ -41,41 +43,97 @@ const SelecAlergenos = () => {
     V: ["Vitamina D", "Vitamina E"],
     Y: ["Yuca"],
   };
-  const token = localStorage.getItem("token");
-  const id = localStorage.getItem("id");
-  const { alergias, setAlergias } = useContext(AlergenosContext);
 
-  const handleInputChange = (alimento) => {
-    setAlergias([...alergias, alimento]);
+  const { alergias, setAlergias } = useContext(AlergenosContext);
+  const [activeLetters, setActiveLetters] = useState([]);
+
+
+  
+  const handleInputChange = (e, alimento) => {
+  
+    if(!alergias.includes(alimento)) {
+      setAlergias([...alergias, alimento]);
+      e.currentTarget.classList.add('alerg-list-section-btns__btn--selected');
+
+    } else {
+      const index = alergias.indexOf(alimento);
+      const newAlergias = [...alergias];
+      newAlergias.splice(index, 1);
+      setAlergias(newAlergias);
+
+      e.target.classList.remove('alerg-list-section-btns__btn--selected');
+    }
+
+
   };
+
+
+
+
   console.log(alergias);
 
+  const checkIsOpen = (e) => {
+      e.currentTarget.children[0].children[1].classList.toggle('alerg-list-section__letter__arrow--open')
+  }
+
   return (
-    <div>
-      <div>
+    <div className="alerg">
+
+      <div className="alerg-top">
+        <Link to="/login" className="alerg-top__link">
+          <img src="/img/icons/angle-left_10513349.png" alt="icono volver"/>
+          volver
+        </Link>
+        <p className="alerg-top__pag">3 de 5</p>
+      </div>
+
+      <h1 className="alerg__title">Ahora selecciona tus alergias e intolerancias</h1>
+
+      <p className="alerg__subtitle">Los elementos marcados serán identificados en tus búsquedas como peligrosos para ti</p>
+
+
+      <div className="alerg-index">
         {Object.keys(alimentos).map((categoria, index) => (
-          <div key={index}>
-            <a href={`#${categoria}`}>{categoria}</a>
+          <div key={index} className="alerg-index-letter">
+            <a href={`#${categoria}`} className="alerg-index-letter__a">{categoria}</a>
           </div>
         ))}
       </div>
-      <div>
+
+
+      <div className="alerg-list">
         {Object.keys(alimentos).map((categoria, index) => (
-          <div key={index}>
-            <p id="categoria">{categoria}</p>
-            <div>
+
+          <details className="alerg-list-section" key={index} open onToggle={checkIsOpen}>
+            <summary id={categoria} className="alerg-list-section__letter">
+              <span>{categoria}</span>
+              <img 
+                src="./img/icons/angle-left_10513349.png" 
+                alt="icono desplegar"
+                className="alerg-list-section__letter__arrow"
+                />
+            </summary> 
+
+            <div className="alerg-list-section-btns">
               {alimentos[categoria].map((alimento, index) => (
-                <div onClick={() => handleInputChange(alimento)} key={index}>
-                  <button>{alimento}</button>
-                </div>
+                
+                <button  
+                  onClick={(e) => handleInputChange(e, alimento)} 
+                  key={index}
+                  className="alerg-list-section-btns__btn">
+                  {alimento}
+                </button>
+                
               ))}
-            </div>
-          </div>
+            </div>            
+          </details>
         ))}
       </div>
+
       <Link to="/confirmacion">
-        <button>Guardar</button>
+        <button className="alerg__btn">Guardar</button>
       </Link>
+
     </div>
   );
 };

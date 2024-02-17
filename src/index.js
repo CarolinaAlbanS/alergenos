@@ -9,6 +9,7 @@ import global_es from "./translations/es/global.json";
 import global_en from "./translations/en/global.json";
 import { AlimentosContextProvider } from "./context/context";
 
+
 i18next.init({
   interpolation: { escapeValue: false },
   lng: "es",
