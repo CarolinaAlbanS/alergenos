@@ -147,4 +147,16 @@ html {
             }
         }
     }
+
+    &__btn {
+        border-radius: 5px;
+        cursor: pointer;
+        border: none;
+        padding: 10px;
+        background-color: $esmeralda;
+        margin: 20px 0;
+        width: 100%;
+        color: white;
+        letter-spacing: 1px;
+    }
 }

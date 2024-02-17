@@ -131,7 +131,7 @@ const SelecAlergenos = () => {
       </div>
 
       <Link to="/confirmacion">
-        <button>Guardar</button>
+        <button className="alerg__btn">Guardar</button>
       </Link>
 
     </div>
