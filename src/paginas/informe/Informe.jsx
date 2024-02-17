@@ -17,7 +17,6 @@ const Informe = () => {
       const userRes = await axios.get(`http://localhost:3001/users/${userId}`);
       setUser(userRes.data.data);
       setDiary(userRes.data.data.diario)
-
     }
 
     getUser();
@@ -45,7 +44,7 @@ const Informe = () => {
 
             <div className='informe-data-user'>
               <p className='informe-data-user__name'>{t("diario.Name")}: {user.name}</p>
-              <p className='informe-data-user__aller'>{t("diario.Allergies")}: {user.allergies}</p>
+              <p className='informe-data-user__aller'><span>{t("diario.Allergies")}</span>: {user.allergens.join(', ')}</p>
             </div>
             <p>{t("diario.Date November 8, 2023")}</p>
             <p>{t("diario.New APTOS products included in your diary.")}</p>

@@ -122,7 +122,7 @@ const SelecAlergenos = () => {
                   key={index}
                   className="alerg-list-section-btns__btn">
                   {alimento}
-                  </button>
+                </button>
                 
               ))}
             </div>            
