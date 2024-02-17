@@ -47,7 +47,7 @@ const Informe = () => {
               <p className='informe-data-user__aller'><span>{t("diario.Allergies")}</span>: {user.allergens.join(', ')}</p>
             </div>
             <p>{t("diario.Date November 8, 2023")}</p>
-            <p>{t("diario.New APTOS products included in your diary.")}</p>
+            <p>{t("diario.products")}</p>
 
             <ul className='informe-data-ul'>
               { diary && diary.map((entry, index) => (  
@@ -56,9 +56,9 @@ const Informe = () => {
                     <img className='informe-data-ul-li__img' src={entry.producto[0].image} alt={entry.producto[0].name}/>
                     <div className='informe-data-ul-li-info'>
                       <span>{entry.producto[0].name}</span>
-                      <p>{entry.comentario}</p>
+                      <p >{entry.comentario}</p>
                     </div>
-                    <p>{t("diario.Ingredients")}: {entry.producto[0].ingredients}</p>
+                    <p className='informe-data-ul-li-info__p'>{t("diario.Ingredients")}: {entry.producto[0].ingredients.join(', ')}</p>
                   </li>
 
                 ))
