@@ -1,133 +1,93 @@
 import React, { useRef, useState } from "react";
+import Slider from "react-slick";
 import { Link } from "react-router-dom";
-import OwlCarousel from "react-owl-carousel";
-import "owl.carousel/dist/assets/owl.carousel.css";
-import "owl.carousel/dist/assets/owl.theme.default.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "./Bienvenida.scss";
 import img1 from "../../../src/assets/scan2.png";
 import img2 from "../../../src/assets/rectangle@3x.png";
 import img3 from "../../../src/assets/ambulancia@3x.png";
 import img4 from "../../../src/assets/viajas2.png";
 import logo from "../../../src/assets/logo@3x.png";
-import "./Bienvenida.scss";
+import direct from "../../assets/angle-right_10513350.png";
 
-const Bienvenida = () => {
-  const owlCarouselRef = useRef(null);
-  const [proximoButton, setProximoButton] = useState(true);
-  const [mostrarSiguiente, setMostrarSiguiente] = useState(true);
 
-  const handleSiguiente = () => {
-    if (owlCarouselRef.current) {
-      owlCarouselRef.current.next();
+
+function Bienvenida() {
+  let sliderRef = useRef(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const next = () => {
+    if (sliderRef) {
+      sliderRef.slickNext();
+      setCurrentSlide(currentSlide + 1);
     }
   };
 
-  const options = {
-    items: 3,
-    loop: false,
-    autoplay: false,
-    autoplayTimeout: 4000,
-    animateOut: "fadeOut",
-    nav: false,
+  const settings = {
     dots: true,
-    center: true,
-    margin: 10,
-    responsive: {
-      1100: {
-        items: 2,
-      },
-      724: {
-        items: 1,
-      },
-      500: {
-        items: 1,
-      },
-      370: {
-        items: 1,
-        innerWidth: "100%",
-        outerWidth: "100%",
-      },
-    },
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    afterChange: (current) => setCurrentSlide(current),
   };
 
-  const terminarButton = (
-    <button className="Terminar">
-      <Link to="/login">Terminar</Link>
-    </button>
-  );
-
-  const siguienteButton = (
-    <button className="Siguiente" onClick={handleSiguiente}>
-      Siguiente
-    </button>
-  );
-
-  const handleChanged = (event) => {
-    console.log(event.property.value)
-    if (
-      event &&
-      event.type === "changed" &&
-      event.property.name === "position"
-    ) {
-      if (event.property.value === 3) {
-        setProximoButton(false);   // Ocultar el botón "Terminar"
-        setMostrarSiguiente(false);  // Ocultar el botón "Siguiente"
-      } else {
-        setProximoButton(true);   // Muestrar el botón "Terminar"
-        setMostrarSiguiente(true);  // Muestra el botón "Siguiente"
-      }
-    }
-  };
   return (
-    <div className="principal">
-      <img className="logo" src={logo} alt="logo" />
-      <OwlCarousel
-        className="owl-theme"
-        {...options}
-        ref={owlCarouselRef}
-        onChanged={handleChanged}
+    <div className="slider-container">
+    <div className="logo">
+        <img className="logo" src={logo} alt="imagen1" />
+      </div>
+      <Slider
+        ref={(slider) => {
+          sliderRef = slider;
+        }}
+        {...settings}
       >
         <div className="item1">
-          <h4 style={{ width: "300px" }}>
-            <img src={img1} alt="img1" />
-          </h4>
-          <p className="title1">
+          <img className="item1" src={img1} alt="imagen1" />
+          <p className="title">
             ¡Bienvenido a Applergic! Escanea el código de barras de tus
             productos y Applergic te dirá si es apto para ti.
           </p>
         </div>
-
         <div className="item2">
-          <h4 style={{ width: "300px" }}>
-            <img src={img2} alt="img2" />
-          </h4>
-          <p className="title2">Lleva tu Diario de compras y actividades.</p>
+          <img className="item2" src={img2} alt="imagen2" />
+          <p className="title">Lleva tu Diario de compras y actividades.</p>
         </div>
         <div className="item3">
-          <h4 style={{ height: "300px" }}>
-            <img src={img3} alt="img3" />
-          </h4>
-          <p className="title3">
+          <img className="item3" src={img3} alt="imagen3" />
+          <p className="title">
             En caso de emergencia nos pondremos en contacto con la persona que
             nos digas.
           </p>
         </div>
         <div className="item4">
-          <h4 style={{ width: "300px" }}>
-            <img src={img4} alt="img4" />
-          </h4>
-          <p className="title4">
+          <img className="item4" src={img4} alt="imagen4" />
+          <p className="title">
             Viaja a donde quieras. Tendrás a tu disposición un traductor offline
             y tu informe de alergias e intolerancias traducido al idioma local.
           </p>
         </div>
-      </OwlCarousel>
+      </Slider>
+      <div className="botones">
       <Link to="/login" className="saltar">
         Saltar
       </Link>
-      {mostrarSiguiente && siguienteButton}
-      {!proximoButton && terminarButton}
+        {currentSlide === 3 ? (
+          <span className="button">
+            <Link to="/login">Terminar</Link>
+          </span>
+        ) : (
+          <span className="button" onClick={next}>
+            Siguiente <img  className="flecha" src={direct} alt ="log"></img>
+          </span>
+        )}
+
+      </div>
+      
     </div>
   );
-};
+}
 
 export default Bienvenida;
