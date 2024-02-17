@@ -1,8 +1,8 @@
 
-@font-face {
-    font-family: 'Montserrat';
-    src: url('http:/localhost:3000/fonts/Montserrat-VariableFont_wght.ttf');
-}
+// @font-face {
+//     font-family: 'Montserrat';
+//     src: url('./fonts/Montserrat-VariableFont_wght.ttf');
+// }
 
 html {
     box-sizing: border-box;
@@ -17,7 +17,7 @@ html {
 }
 
 body {
-    font-family: 'Inter', sans-serif;;
+    font-family: 'Montserrat';
 }
 
 ul {
