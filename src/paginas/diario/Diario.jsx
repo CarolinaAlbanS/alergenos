@@ -4,13 +4,12 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 const Diario = () => {
+  const [diario, setDiario] = useState([]);
+
   const userId = localStorage.getItem("id");
   const token = localStorage.getItem("token");
-
   console.log(token);
   console.log(userId);
-
-  const [diario, setDiario] = useState([]);
 
   useEffect(() => {
     resetDiario();

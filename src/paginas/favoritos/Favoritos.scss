@@ -29,10 +29,10 @@ $esmeralda : rgb(51, 154, 116);
         display: grid;
         grid-template-columns: 1fr 1fr;
         overflow: hidden;
-        gap: 15px;
+        gap: 30px;
 
         &-item {
-            background-color: rgb(202, 202, 202);
+            background-color: white;
             border-radius: 5px;
             height: 100%;
             width: 100%;
@@ -40,6 +40,7 @@ $esmeralda : rgb(51, 154, 116);
             overflow: hidden;
             position: relative;
             cursor: pointer;
+            // rgb(202, 202, 202);
 
             &__img {
                 width: 100%;
@@ -55,6 +56,20 @@ $esmeralda : rgb(51, 154, 116);
                 text-align: center;
                 background-image: linear-gradient(to top , $esmeralda 40%, rgba(51, 154, 116, 0));
             }
+            &__imagen{
+                margin-left: 88%;
+                width: 13px;
+            }
         }
+    }
+    &__boton{
+        border-radius: 5px;
+            cursor: pointer;
+            border: none;
+            padding: 10px;
+            background-color: $esmeralda;
+            margin: 20px 0;
+            width: 100%;
+            color: white;
     }
 }
