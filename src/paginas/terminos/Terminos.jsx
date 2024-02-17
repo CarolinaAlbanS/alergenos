@@ -1,5 +1,6 @@
 import React from 'react'
 import './Terminos.scss'
+import { Link } from 'react-router-dom'
 
 const Terminos = () => {
   return (
@@ -27,6 +28,7 @@ const Terminos = () => {
         <p>App alergic a través de su sitio web concede una licencia para que los usuarios utilicen los servicios que son vendidos en este sitio web de acuerdo a los Términos y Condiciones que se describen en este documento.</p>
       </div>
     </div>
+    
   )
 }
 

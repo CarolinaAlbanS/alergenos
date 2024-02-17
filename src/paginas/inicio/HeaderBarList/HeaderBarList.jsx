@@ -96,6 +96,7 @@ export default function BurgerBar() {
                       Salir
                     </li>
                 </Link>
+                
          </ul>
         </nav>
     )
