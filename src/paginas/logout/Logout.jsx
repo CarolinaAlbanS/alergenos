@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import "./Logout.scss";
 
 const Logout = () => {
   const id = localStorage.getItem("id");
@@ -16,11 +17,17 @@ const Logout = () => {
   };
 
   return (
-    <div>
-      <h2>¿Estas seguro que quieres cerrar sesion?</h2>
-      <div>
-        <button onClick={handleLogout}>Si</button>
-        <button>No</button>
+    <div className="logout">
+      <h2 className="logout__titulo">
+        ¿Estas seguro que quieres cerrar sesion?
+      </h2>
+      <div className="logout-botones">
+        <button className="logout-botones__boton1" onClick={handleLogout}>
+          Si
+        </button>
+        <div className="logout-botones__boton2">
+          <Link to="/inicio">No</Link>
+        </div>
       </div>
     </div>
   );

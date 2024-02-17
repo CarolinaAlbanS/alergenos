@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import './QuienEres.scss';
+import "./QuienEres.scss";
 
 const QuienEres = () => {
   const { register, handleSubmit } = useForm();
@@ -25,26 +25,31 @@ const QuienEres = () => {
     <div className="quien">
       <div className="quien-top">
         <Link to="/login" className="quien-top__link">
-          <img src="/img/icons/angle-left_10513349.png" alt="icono volver"/>
+          <img src="/img/icons/angle-left_10513349.png" alt="icono volver" />
           volver
-          </Link>
-        <p className="quien-top__pag">1 de 4</p>
+        </Link>
+        <p className="quien-top__pag">1 de 5</p>
       </div>
 
       <h1 className="quien__title">Dinos quien eres</h1>
 
       <form className="quien-form" onSubmit={handleSubmit(onSubmit)}>
-
-        <label 
-          className="quien-form-file" 
-          htmlFor="imgInput">
-          <img src="/img/icons/camera1.png" className="quien-form-file__img" alt="icono camara"/>
+        <label className="quien-form-file" htmlFor="imgInput">
+          <img
+            src="/img/icons/camera1.png"
+            className="quien-form-file__img"
+            alt="icono camara"
+          />
           Sube tu imagen
-
-          <input className="quien-form-file__input" type="file" name="img" id="imgInput" accept="image/png, image/jpg" />
+          <input
+            className="quien-form-file__input"
+            type="file"
+            name="img"
+            id="imgInput"
+            accept="image/png, image/jpg"
+          />
         </label>
-          
-        
+
         <input
           className="quien-form__input"
           type="text"

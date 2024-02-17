@@ -1,7 +1,8 @@
 import axios from "axios";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import "./ConfirCuenta.scss";
 
 const ConfirCuenta = () => {
   const { register, handleSubmit } = useForm();
@@ -25,13 +26,22 @@ const ConfirCuenta = () => {
     }
   };
   return (
-    <div>
-      <div>
-        <h1>Confirmanos tu email y contraseña</h1>
+    <div className="confiCuenta">
+      <div className="confiCuenta-superior">
+        <Link to="/registro" className="confiCuenta-superior__link">
+          <img src="/img/icons/angle-left_10513349.png" alt="icono volver" />
+          volver
+        </Link>
+        <p className="confiCuenta-superior__p">2 de 5</p>
       </div>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <h2 className="confiCuenta__titulo">Confirmanos tu email y contraseña</h2>
+      <form
+        className="confiCuenta-formulario"
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <label htmlFor="email"></label>
         <input
+          className="confiCuenta-formulario__input"
           type="email"
           id="email"
           {...register("email", { required: true })}
@@ -40,13 +50,14 @@ const ConfirCuenta = () => {
         ></input>
         <label htmlFor="password"></label>
         <input
+          className="confiCuenta-formulario__input"
           type="password"
           id="password"
           {...register("password", { required: true })}
           // onInput={handleSubmit(onSubmit)}
           placeholder="Password"
         ></input>
-        <button>Confirmar</button>
+        <button className="confiCuenta-formulario__button">Confirmar</button>
       </form>
     </div>
   );

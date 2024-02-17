@@ -36,36 +36,38 @@ const ConfirAlergenos = () => {
   };
 
   return (
-    <div className="contenedorConfirmarAlergia">
-      <div>
-        <h1>Confirma tu elección.</h1>
+    <div className="confiAlergia">
+      <div className="confiAlergia-superior">
+        <Link to="/alergenos" className="confiAlergia-superior__link">
+          <img src="/img/icons/angle-left_10513349.png" alt="icono volver" />
+          volver
+        </Link>
+        <p className="confiAlergia-superior__pag">3 de 5</p>
       </div>
-      <div>
-        <p>
+      <div className="confiAlergia-texto">
+        <h1 className="confiAlergia-texto__titulo">Confirma tu elección.</h1>
+        <p className="confiAlergia-texto__p">
           A continuación te reunimos los alimentos registrados como peligrosos
           para ti.
         </p>
       </div>
-      <div className="contenedorBotonAlergias">
+      <div className="confiAlergia-botones">
         {alergias.map((alergia, index) => (
 
-          <div key={index}>
-
           <div onClick={() => eliminarAlergia(index)} key={index}>
-
-            <button className="botonSeleccionAlergia">{alergia}</button>
+            <button className="confiAlergia-botones__boton">{alergia}</button>
           </div>
         ))}
       </div>
-      <div className="contenedorAñadirConfirmar">
+      <div className="confiAlergia-buttons">
+        <Link to="/alergenos">
+          <button className="confiAlergia-buttons__button">
+            Añadir nuevos
+          </button>
+        </Link>
 
-      <Link to="/alergenos">
-        <button className="botonAñadirAlergia">Añadir nuevos</button>
-      </Link>
-      
-      
 
-        <button onClick={handleSubmit} className="botonConfirmarAlergias">
+        <button onClick={handleSubmit} className="confiAlergia-buttons__button">
           Confirmar
         </button>
 
