@@ -60,7 +60,7 @@ const ResultadoEscaneo = ({product, productStatus}) => {
                 <div className='scannedProduct-info'>
                     <h4 className='scannedProduct-info__name'>{product.name}</h4>
                     <span className='scannedProduct-info__brands'>{product.brands}</span>
-                    <p className='scannedProduct-info__ing'>Ingredientes: {product.ingredients.join(', ')}</p>
+                    <p className='scannedProduct-info__ing'>Ingredientes: {product.ingredients?.join(', ')}</p>
                 </div>
 
                 {/* <div className={'scannedProduct-modal-wrap ' + (showModalFavs && 'scannedProduct-modal-wrap--visible')}> */}
