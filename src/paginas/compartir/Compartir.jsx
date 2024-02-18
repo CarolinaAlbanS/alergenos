@@ -4,8 +4,8 @@ import './Compartir.scss'
 const Compartir = () => {
     const linkApp = "http://localhost:3000/";
   return (
-      <div>
-        <h1>Comparte nuestra app con tus conocidos:</h1>
+      <div className='contenedorTituloCompartir'>
+        <h1 className='tituloCompartir'>Comparte nuestra app con tus conocidos:</h1>
         <div className='containerCompartir'>
 
 

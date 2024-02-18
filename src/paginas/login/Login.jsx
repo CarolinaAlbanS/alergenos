@@ -59,7 +59,7 @@ const Login = () => {
             placeholder="Password"
           ></input>
 
-          <Link to="/contrseña">
+          <Link to="/contraseña">
             <p className="login-wrap-form__recuperar">¿Olvidaste tu contraseña?</p>
           </Link>
 
@@ -75,6 +75,7 @@ const Login = () => {
             <p className="login-wrap-opt__otro">Me registraré en otro momento</p>
           </Link>
         </div>
+
 
       </div>
     </div>

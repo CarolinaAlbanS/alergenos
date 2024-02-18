@@ -10,11 +10,20 @@
         
         max-width: 600px;
         }
+
+        .tituloCompartir{
+            margin-left: 5%;
+            margin-bottom: 30px;
+            font-size: 25px;
+            margin-top: 20px;
+        }        
     
     
     .imagenCompartir{
         width: 150px;
     }
+
+    
 }
 
 @media only screen and (min-width: 1000px){
@@ -28,9 +37,17 @@
         text-align: center;
         
         }
+
+        .tituloCompartir{
+            margin-left: 30%;
+            margin-bottom: 40px;
+            margin-top: 30px;
+        }
     
     
     .imagenCompartir{
         width: 300px;
     }
+
+    
 }
