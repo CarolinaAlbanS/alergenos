@@ -23,6 +23,7 @@ import Perfil from "./componentes/perfil/Perfil";
 import Logout from "./paginas/logout/Logout";
 import ConfirCuenta from "./componentes/confirmarCuenta/ConfirCuenta"
 import Informe from "./paginas/informe/Informe";
+import Satisfacion from "./paginas/satifacion/Satisfacion";
 
 function App() {
   return (
@@ -40,7 +41,7 @@ function App() {
           <Route path="/" element={<Portada />}></Route>
           <Route path="/logout" element={<Logout />}></Route>
           <Route path="/confirCuenta" element={<ConfirCuenta />}></Route>
-
+          <Route path="/satisfacion" element={<Satisfacion />}></Route>
           <Route path="/inicio" element={<Inicio />}></Route>
           <Route path="/emergencia" element={<Emergencia />}></Route>
           <Route path="/alergenos" element={<SelecAlergenos />}></Route>

@@ -10,9 +10,11 @@ function Valoracion() {
   return (
     <div>
     <div className="volver">
-      <Link to="/escaneo" className="escaneo">
-        Volver
+      
+      <Link to="/inicio" className="inicio">
+      <img  className="indice"src="./img/icons/angle-left_10513349.png" alt="flecha"></img> Volver
       </Link>
+      
       </div>
       <div className="logo1">
       <img src={logo1} alt="logo"></img>
@@ -42,9 +44,9 @@ function Valoracion() {
       })}
       </div>
       <div className="sugerencias1">
-      <a class="sugerencias" href=" enviar sugerencias" title="enviar">
-        Enviar sugerencias
-      </a>
+      <Link to="/Satisfacion" className="sugerencias">
+        Enviar Sugerencias
+      </Link>
       </div>
     </div>
     
