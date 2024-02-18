@@ -1,34 +1,69 @@
-.btn1 {
-  display: flex;
-  flex-direction: row;
-  grid: 20px;
-  align-items: flex-end;
-  color:turquoise;
+
+
+@media only screen and (max-width: 1000px){
+  .seccionPerfil{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .hola-perfil{
+    margin-left: 5%;
+    margin-top: 10px;
+  }
   
+
+    .imagen-inicio{
+      width: 20px;
+      padding-left: 4px;
+    }
+
+    .containerInicioTitulo{
+      margin-top: 15px;
+    }
+    .Linkkinicio{
+      display: flex;
+      align-items: center;
+    }
 }
-.img1 {
-  display: flex;
-  gap: 15px;
-  height: 240px;
-  justify-content: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-.datos {
-  text-align: center;
-}
-.hola-perfil {
-  text-align: center;
-}
-.datosPerfil {
-  text-align: center;
-  margin-top: 10px;
-}
-.favorits{
-    text-align: center;
-    margin-top: 10px;
-}
-.contactoEmergencia{
-    text-align: center;
-    margin-top: 10px;
+
+
+@media only screen and (min-width: 1000px){
+  
+  .hola-perfil{
+    position: absolute;
+    left: 40%;
+  }
+    .seccionPerfil{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 200px;
+    }
+  
+    .imagenProducto{
+      width: 500px;
+    }
+
+    .containerTexto{
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+      font-size: 22px;
+    }
+
+    .imagen-inicio{
+      width: 30px;
+      padding-left: 4px;
+    }
+
+    .containerInicioTitulo{
+      margin-top: 20px;
+    }
+
+    .Linkkinicio{
+      display: flex;
+      align-items: center;
+    }
 }

@@ -22,25 +22,37 @@ function Perfil() {
   }, []);
 
   return (
-    <div>
-      <div className="btn1">
-        <Link to="/inicio" className="favoritos">
-          Inicio
+    <div className="contenedorMovilPerfil">
+    <div className="containerInicioTitulo">
+    <Link to="/inicio" className="Linkkinicio">
+           <img src="./img/icons/angle-left_10513349.png" alt="Home" className="imagen-inicio"/> <p>Volver</p>
         </Link>
-        <Link to="/favoritos" className="inicio">
-          Favoritos
-        </Link>
+
+    </div>
+
+    <h1 className="hola-perfil">Bienvenid@ {userData.name}</h1>
+
+    <section className="seccionPerfil">
+      
+
+   
+
+    <div className="img1">
+        <img src={userData.img} alt="perfil" className="imagenProducto"/>
       </div>
-      <h1 className="hola-perfil">Hola soy...</h1>
-      <div className="img1">
-        <img src={userData.img} alt="perfil" />
-      </div>
-      <div className="datos">
-        <h3>{userData.name}</h3>
-        <p>Email: {userData.email}</p>
-      </div>
+
+      <div className="containerPerfil">
+      
+
+        <div className="containerTexto">
+        <div className="datos">
+        {/* <h3>{userData.name}</h3> */}
+        <div>
+        <h4>Email:</h4> <p>{userData.email}</p>
+        </div>
       <div className="datosPerfil">
-        <h4>Tengo alergia:</h4>
+      </div>
+        <h4>Mis alergias:</h4>
         {userData?.allergens?.map((users, index) => (
           <p key={index}>{users}</p>
         ))}
@@ -51,7 +63,7 @@ function Perfil() {
           <p key={index}>{users}</p>
         ))}
       </div>
-      
+
       {userData.emergency && <div className="contactoEmergencia">
         <h4>Contacto de emergencia:</h4>
         <p>Nombre:</p>
@@ -61,7 +73,15 @@ function Perfil() {
         <p>Compañia:</p>
         <p>{userData.emergency.seguro}</p>
       </div>}
+      </div>
+        </div>
+        
+    </section>
     </div>
+    
+    
+   
+    
   );
 }
 
