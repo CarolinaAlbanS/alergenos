@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./Diario.scss";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Diario.scss";
 
 const Diario = () => {
+  const navigate = useNavigate();
+
   const [diario, setDiario] = useState([]);
 
   const userId = localStorage.getItem("id");
@@ -13,6 +15,9 @@ const Diario = () => {
   console.log(userId);
 
   useEffect(() => {
+    if (!userId || !token) {
+      navigate("/login");
+    }
     resetDiario();
   }, []);
 
@@ -30,6 +35,9 @@ const Diario = () => {
   console.log(diario[0]);
 
   const resetDiario = async () => {
+    if (!userId) {
+      return;
+    }
     const res = await axios.get(`http://localhost:3001/users/${userId}`);
     const alimento = res.data.data.diario;
     setDiario(alimento);
