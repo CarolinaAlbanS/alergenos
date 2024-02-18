@@ -4,6 +4,9 @@ $esmeralda : rgb(51, 154, 116);
     width: 90vw;
     margin: 0 auto;
     padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+
     &-superior{
         display: flex;
         justify-content: center;
@@ -34,6 +37,10 @@ $esmeralda : rgb(51, 154, 116);
     &-formulario{
         display: flex;
         flex-direction: column;
+        margin-top: 50%;
+        width: 100%;
+        transform: translateY(-50%);
+
         &__input {
             border: none;
             border-bottom: 1px solid gray;
@@ -41,6 +48,7 @@ $esmeralda : rgb(51, 154, 116);
             margin-bottom: 25px;
             width: 100%;
         }
+
         &__button{
             border-radius: 5px;
             cursor: pointer;
