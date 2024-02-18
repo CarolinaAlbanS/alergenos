@@ -66,9 +66,9 @@ const Favoritos = () => {
             </div>
           ))}
       </div>
-      <div className="favoritos__boton">
-        <Link to="/escaneo"> Volver</Link>
-      </div>
+      <button className="diario__boton" onClick={() => navigate(-1)}>
+        Volver
+      </button>
     </div>
   );
 };

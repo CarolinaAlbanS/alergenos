@@ -32,7 +32,14 @@ const Diario = () => {
       console.log(e);
     }
   };
-  console.log(diario[0]);
+
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+  };
 
   const resetDiario = async () => {
     if (!userId) {
@@ -58,7 +65,7 @@ const Diario = () => {
                   eliminarEntrada(entrada._id);
                 }}
               />
-              <p>{entrada.fecha}</p>
+              <p>{formatDate(entrada.fecha)}</p>
               <p>{entrada.comentario}</p>
               <div>
                 {entrada.producto.map((alimento, index) => (
@@ -84,6 +91,9 @@ const Diario = () => {
       <Link className="diario__boton" to="/informe">
         Generar informe
       </Link>
+      <button className="diario__boton" onClick={() => navigate(-1)}>
+        Volver
+      </button>
     </div>
   );
 };
