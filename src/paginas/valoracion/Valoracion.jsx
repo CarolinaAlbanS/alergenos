@@ -8,7 +8,7 @@ function Valoracion() {
   const [rating, setRating] = useState(null);
   const [hover, setHover] = useState(null);
   return (
-    <div>
+    <div className="valoracion-wrapper">
     <div className="volver">
       
       <Link to="/inicio" className="inicio">
