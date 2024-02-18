@@ -15,7 +15,7 @@ export default function BurgerBar() {
               alt="logo"
               className="imagenHeaderBarList"
             />{" "}
-            Perfil
+          Perfil
           </li>
         </Link>
         </div>
@@ -59,9 +59,15 @@ export default function BurgerBar() {
         </Link>
         </div>
           <div>
-             <Link to={"/traductor"}>
+             <Link to={"/informe"}>
            
-             <li className="liHeaderBarList"> <img src="./img/icons/translation.png" alt="logo" className="imagenHeaderBarList" /> Traductor</li>
+             <li className="liHeaderBarList"> <img src="./img/icons/translation.png" alt="logo" className="imagenHeaderBarList" />Informe </li>
+             </Link>
+             </div>
+             <div>
+             <Link to={"/valoracion"}>
+             
+                <li className="liHeaderBarList"> <img src="./img/icons/added.png" alt="logo" className="imagenHeaderBarList" /> Valoracion</li>
              </Link>
              </div>
              <div>
