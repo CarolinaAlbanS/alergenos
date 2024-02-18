@@ -35,7 +35,7 @@ const ModalDiario = ({ product, productStatus, setShowModalDiary }) => {
       const newProd = {
         producto: productId,
         comentario: comment.comment,
-        fecha: new Date().toLocaleDateString("en-US"),
+        fecha: new Date(),
       };
 
       //recoger usuario para acceder a su propiedad diary
