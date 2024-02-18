@@ -92,6 +92,11 @@ $esmeralda : rgb(51, 154, 116);
             overflow-y: auto;
             font-size: 13px;
         }
+
+        &__brands {
+            margin: 7px;
+            display: block;
+        }
     }
 
     &-modal-wrap {

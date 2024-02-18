@@ -3,8 +3,8 @@ import "./Portada.scss";
 export default function Portada (){
     return (
 
-        <div className="ContenedorPortada">
-            <h1 className="ContenedorPortada__h1">Applergic</h1>
+        <div className="contenedorPortada">
+            <h1 className="contenedorPortada__h1">Applergic</h1>
 
             <p>Mi guía alimentaria</p>
             <Link to={"/bienvenida"}>
