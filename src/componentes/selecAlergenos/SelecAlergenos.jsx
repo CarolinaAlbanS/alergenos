@@ -50,31 +50,53 @@ const SelecAlergenos = () => {
 
   
   const handleInputChange = (e, alimento) => {
-  
+    //si no está añadido, añadir
     if(!alergias.includes(alimento)) {
       setAlergias([...alergias, alimento]);
       e.currentTarget.classList.add('alerg-list-section-btns__btn--selected');
 
+      //sinó eliminar
     } else {
       const index = alergias.indexOf(alimento);
       const newAlergias = [...alergias];
       newAlergias.splice(index, 1);
       setAlergias(newAlergias);
-
       e.target.classList.remove('alerg-list-section-btns__btn--selected');
     }
-
-
   };
 
+  useEffect(()=>{
+    //crear array de letras seleccionadas
+    const newActiveLetters = new Set(activeLetters);
 
+    alergias.forEach(al => {
+      if (!newActiveLetters.has(al[0])) {
+        newActiveLetters.add(al[0]);
+        setActiveLetters([...newActiveLetters]);
+      } 
+    });
 
+    console.log(newActiveLetters)
+    console.log(alergias)
+    //añadir clase y su href coincide con algún valor del array previo
+    function checkSelectedLetters() {
+      const letters$$ = document.querySelectorAll('.alerg-index-letter__a');
+      letters$$.forEach(lttr => {
+        const lttrStr = lttr.getAttribute('href').split('').pop();
+        if(activeLetters.includes(lttrStr)) {
+          lttr.classList.add('selected');
+        }
+      })
+    }
+    checkSelectedLetters();
+  }, [alergias, activeLetters])
 
-  console.log(alergias);
 
   const checkIsOpen = (e) => {
       e.currentTarget.children[0].children[1].classList.toggle('alerg-list-section__letter__arrow--open')
   }
+
+  
 
   return (
     <div className="alerg">

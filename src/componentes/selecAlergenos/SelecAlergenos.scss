@@ -69,6 +69,11 @@ html {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+
+                &.selected {
+                    background-color: $esmeralda;
+                    color: white;
+                }
             }
         }
     }
