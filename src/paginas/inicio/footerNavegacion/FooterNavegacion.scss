@@ -10,3 +10,11 @@
 .imagen-footer{
      width: 40px;
 }
+
+@media only screen and (min-width: 1000px){
+    .navMovil{
+        display: none;
+    }
+    
+    
+}

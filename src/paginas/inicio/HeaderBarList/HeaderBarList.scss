@@ -1,12 +1,14 @@
 @media only screen and (max-width: 1000px){
-    .listaHeaderBarList{
+    .listaHeaderBarList {
         list-style-type: none;
-         display: flex;
-         flex-direction: column;
-         display: inline-block;
-         position: fixed;
-         top: 60px;
-         left: 30px;
+        display: flex;
+        flex-direction: column;
+        display: inline-block;
+        position: fixed;
+        top: 60px;
+        left: 30px;
+        background: white;
+        width: 140px;
     }
     
     .liHeaderBarList {
@@ -57,14 +59,10 @@ li.liHeaderBarList {
 div {
     margin-bottom: 12px;
 }
-.listaHeaderBarList {
-    list-style-type: none;
+
+.liHeaderBarList{
     display: flex;
-    flex-direction: column;
-    display: inline-block;
-    position: fixed;
-    top: 60px;
-    left: 30px;
-    background: white;
-    width: 140px;
+    align-items: center;
+    text-align: center;
+    column-gap: 7px;
 }

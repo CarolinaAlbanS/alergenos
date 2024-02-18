@@ -3,7 +3,7 @@ import "./FooterNavegacion.scss"
 
 export default function NavBar(){
     return (
-        <nav>
+        <nav className="navMovil">
     <ul className="lista-footer">
      <Link to={"/"}>
         <li> <img src="./img/icons/home.png" alt="Home" className="imagen-footer"/> </li>

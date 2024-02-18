@@ -6,7 +6,7 @@ export default function BurgerBar() {
     <div className="burger">
     <nav>
       <ul className="listaHeaderBarList">
-        <div>
+        <div className="iconoRutaBarList">
         <Link to={"/perfil"} className="perfil">
           <li className="liHeaderBarList">
             {" "}
@@ -15,11 +15,11 @@ export default function BurgerBar() {
               alt="logo"
               className="imagenHeaderBarList"
             />{" "}
-          Perfil
+          <p>Perfil</p>
           </li>
         </Link>
         </div>
-        <div>
+        <div className="iconoRutaBarList">
         <Link to={"/favoritos"} className="links">
           <li className="liHeaderBarList">
             {" "}
@@ -32,7 +32,7 @@ export default function BurgerBar() {
           </li>
         </Link>
         </div>
-        <div>
+        <div className="iconoRutaBarList">
         <Link to={"/diario"}>
           <li className="liHeaderBarList">
             {" "}
@@ -45,7 +45,7 @@ export default function BurgerBar() {
           </li>
         </Link>
         </div>
-        <div>
+        <div className="iconoRutaBarList">
         <Link to={"/compartir"}>
           <li className="liHeaderBarList">
             {" "}
@@ -58,19 +58,19 @@ export default function BurgerBar() {
           </li>
         </Link>
         </div>
-          <div>
+          <div className="iconoRutaBarList">
              <Link to={"/informe"}>
            
              <li className="liHeaderBarList"> <img src="./img/icons/translation.png" alt="logo" className="imagenHeaderBarList" />Informe </li>
              </Link>
              </div>
-             <div>
+             <div className="iconoRutaBarList">
              <Link to={"/valoracion"}>
              
                 <li className="liHeaderBarList"> <img src="./img/icons/added.png" alt="logo" className="imagenHeaderBarList" /> Valoracion</li>
              </Link>
              </div>
-             <div>
+             <div className="iconoRutaBarList">
              <Link to={"/terminos"}>
              
                 <li className="liHeaderBarList"> <img src="./img/icons/terms.png" alt="logo" className="imagenHeaderBarList" /> Terminos</li>
