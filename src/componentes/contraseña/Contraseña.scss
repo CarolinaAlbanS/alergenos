@@ -1,0 +1,37 @@
+$esmeralda : rgb(51, 154, 116);
+.containerContraseña{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
+}
+
+.h3Contraseña{
+    margin-bottom: 20px;
+}
+
+.botonContraseña{
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    background-color: $esmeralda;
+    margin: 20px 0;
+    width: 100%;
+    color: white;
+    width: 150px;
+    height: 30px;
+}
+
+.imgVolverContraseña{
+    width: 20px;
+}
+
+.containerVolver{
+    display: flex;
+    margin: 15px;
+}
+
+//tiene que salir un alert al darle al submit (revisa su correo)
+
