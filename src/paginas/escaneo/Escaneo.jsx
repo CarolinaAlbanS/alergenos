@@ -175,7 +175,7 @@ const Escaneo = () => {
 
         <div className="scan">
               
-                <img className="scan__close" src="/img/icons/close.png" alt="icono cerrar" onClick={()=>navigate(-1)}/>    
+                <img className="scan__close" src="/img/icons/close.png" alt="icono cerrar" onClick={()=>navigate("/inicio")}/>    
             
 
             {productStatus 

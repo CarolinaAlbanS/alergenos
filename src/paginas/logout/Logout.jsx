@@ -20,7 +20,7 @@ const Logout = () => {
       </h2>
       <div className="logout-botones">
         <div className="logout-botones__boton1">
-          <Link to="/inicio">Si</Link>
+          <Link to="/login">Si</Link>
         </div>
         <div className="logout-botones__boton2">
           <Link to="/inicio">No</Link>

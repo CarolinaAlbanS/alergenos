@@ -36,7 +36,7 @@ const Login = () => {
 
         <div className="login-wrap-txt">
           <h2 className="login-wrap-txt__h2">¡Bienvenido de nuevo!</h2>
-          <p>Por favor, introduce tus datos para continuar,</p>
+          <p>Por favor, introduce tus datos para continuar</p>
         </div>
 
         <form className="login-wrap-form" onSubmit={handleSubmit(onSubmit)}>

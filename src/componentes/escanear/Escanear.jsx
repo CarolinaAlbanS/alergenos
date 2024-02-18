@@ -39,7 +39,7 @@ const Escanear = ({setScanCode, setScanType, scanType}) => {
 
               <div className="scan-icons-item" onClick={()=>setScanType('nfc')}>
                 <div className={"scan-icons-item-icon " + (scanType === 'nfc' &&'scan-icons-item-icon--active')}>
-                  <img className="scan-icons-item-icon__img" src="/img/icons/NFC.png" alt="icono NFC"/>
+                  <img className="scan-icons-item-icon__img" src="/img/icons/nfc.png" alt="icono NFC"/>
                 </div>
                 <p className="scan-icons-item__txt">NFC</p>
               </div>
