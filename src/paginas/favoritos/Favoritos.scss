@@ -12,12 +12,6 @@ $esmeralda : rgb(51, 154, 116);
     align-items: center;
     gap: 30px;
 
-    &__close {
-        margin-left: auto;
-        width: 20px;
-        cursor: pointer;
-    }
-
     &__title {
         font-weight: bold;
         display: block;

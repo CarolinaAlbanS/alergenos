@@ -131,4 +131,16 @@ $esmeralda : rgb(51, 154, 116);
         cursor: pointer;
         width: 100%;
     }
+    &__link{
+        padding: 10px;
+        background-color: $esmeralda;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        width: 90%;
+        cursor: pointer;
+        width: 100%;
+        font-size: 13px;
+
+    }
 }

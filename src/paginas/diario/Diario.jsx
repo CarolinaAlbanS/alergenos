@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Diario.scss";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import "./Diario.scss";
 
 const Diario = () => {
   const [diario, setDiario] = useState([]);
@@ -26,6 +27,7 @@ const Diario = () => {
       console.log(e);
     }
   };
+  console.log(diario[0]);
 
   const resetDiario = async () => {
     const res = await axios.get(`http://localhost:3001/users/${userId}`);
@@ -34,34 +36,45 @@ const Diario = () => {
   };
 
   return (
-    <div>
-      <div>
+    <div className="diario">
+      <h3 className="diario__title">Diario</h3>
+      <div className="diario-grid">
         {diario &&
           diario.map((entrada, index) => (
-            <div key={index}>
+            <div className="diario-grid-item" key={index}>
+              <img
+                className="diario-grid-item__imagen"
+                src="/img/icons/close.png"
+                alt="Eliminar"
+                onClick={async () => {
+                  eliminarEntrada(entrada._id);
+                }}
+              />
               <p>{entrada.fecha}</p>
               <p>{entrada.comentario}</p>
               <div>
                 {entrada.producto.map((alimento, index) => (
                   <div key={index}>
-                    <p>{alimento.name}</p>
-                    <img src={alimento.image} />
-                    <button
-                      onClick={async () => {
-                        console.log(entrada);
-                        eliminarEntrada(entrada._id);
-                      }}
-                    >
-                      X
-                    </button>
+                    <span className="diario-grid-item__name">
+                      {alimento.name}
+                    </span>
+                    <img
+                      src={
+                        alimento.image
+                          ? alimento.image
+                          : "/img/icons/product.jpeg"
+                      }
+                      alt={alimento.name}
+                      className="diario-grid-item__img"
+                    />
                   </div>
                 ))}
               </div>
             </div>
           ))}
       </div>
-      <Link to="/informe">
-        <button>Generar informe</button>
+      <Link className="diario__boton" to="/informe">
+        Generar informe
       </Link>
     </div>
   );

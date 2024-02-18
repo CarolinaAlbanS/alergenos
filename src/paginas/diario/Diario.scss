@@ -1,0 +1,68 @@
+$esmeralda : rgb(51, 154, 116);
+
+.diario{
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 90vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 30px;
+    &__title{
+        font-weight: bold;
+        display: block;
+        text-align: center;
+        font-size: 18px;
+    }
+    &-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        overflow: hidden;
+        gap: 30px;
+
+        &-item {
+            background-color: white;
+            border-radius: 5px;
+            height: 240px;
+            width: 100%;
+            aspect-ratio: 1 /1 ;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            // rgb(202, 202, 202);
+
+            &__img {
+                width: 100%;
+            }
+            &__name {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                padding: 7px;
+                padding-top: 30px;
+                width: 100%;
+                color: white;
+                text-align: center;
+                background-image: linear-gradient(to top , $esmeralda 40%, rgba(51, 154, 116, 0));
+            }
+            &__imagen{
+                margin-left: 88%;
+                width: 13px;
+            }
+    }
+}
+&__boton{
+    border-radius: 5px;
+        cursor: pointer;
+        border: none;
+        padding: 10px;
+        background-color: $esmeralda;
+        margin: 20px 0;
+        width: 100%;
+        color: white;
+}
+
+
+}

@@ -46,9 +46,9 @@ const Favoritos = () => {
               <img
                 className="favoritos-grid-item__imagen"
                 src="/img/icons/close.png"
+                alt="Eliminar"
                 onClick={async () => {
                   eliminarEntrada(fav._id);
-                  console.log(fav._id);
                 }}
               />
               <img

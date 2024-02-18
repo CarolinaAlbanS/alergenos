@@ -9,12 +9,9 @@ const Logout = () => {
   console.log(token);
   console.log(id);
   const navigate = useNavigate();
-  const handleLogout = async (id) => {
-    const res = await axios.post("http://localhost:3001/users/logout");
-    navigate("/");
-    localStorage.removeItem("id");
-    localStorage.removeItem("token");
-  };
+
+  localStorage.removeItem("id");
+  localStorage.removeItem("token");
 
   return (
     <div className="logout">
@@ -22,9 +19,9 @@ const Logout = () => {
         ¿Estas seguro que quieres cerrar sesion?
       </h2>
       <div className="logout-botones">
-        <button className="logout-botones__boton1" onClick={handleLogout}>
-          Si
-        </button>
+        <div className="logout-botones__boton1">
+          <Link to="/inicio">Si</Link>
+        </div>
         <div className="logout-botones__boton2">
           <Link to="/inicio">No</Link>
         </div>
