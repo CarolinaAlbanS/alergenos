@@ -7,27 +7,27 @@ import "./QuienEres.scss";
 const QuienEres = () => {
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
-  const [image, setImage] = useState(null);
+  // const [image, setImage] = useState(null);
 
-  const handleImageChange = (event) => {
-    setImage(event.target.files[0]);
-  };
+  // const handleImageChange = (event) => {
+  //   setImage(event.target.files[0]);
+  // };
 
   const onSubmit = async (data) => {
-    try {
-      const res = await axios.post(
-        "http://localhost:3001/users/upload",
-        image,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
-      console.log(res);
-    } catch (error) {
-      console.error("fallo en la llamada", error);
-    }
+    // try {
+    //   const res = await axios.post(
+    //     "http://localhost:3001/users/upload",
+    //     image,
+    //     {
+    //       headers: {
+    //         "Content-Type": "multipart/form-data",
+    //       },
+    //     }
+    //   );
+    //   console.log(res);
+    // } catch (error) {
+    //   console.error("fallo en la llamada", error);
+    // }
     try {
       console.log(data);
       const res = await axios.post("http://localhost:3001/users/create", data);
@@ -62,7 +62,7 @@ const QuienEres = () => {
           Sube tu imagen
           <input
             className="quien-form-file__input"
-            onChange={handleImageChange}
+            //onChange={handleImageChange}
             type="file"
             name="img"
             id="imgInput"

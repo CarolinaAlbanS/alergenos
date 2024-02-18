@@ -9,10 +9,17 @@ const Informe = () => {
   const [user, setUser] = useState();
   const [diary, setDiary] = useState();
   const navigate = useNavigate();
+  const token = localStorage.getItem("token");
+  const userId = localStorage.getItem("id");
 
   useEffect(() => {
+    if (!userId || !token) {
+      navigate("/login");
+    }
     const getUser = async () => {
-      const userId = localStorage.getItem("id");
+      if (!userId) {
+        return;
+      }
       const userRes = await axios.get(`http://localhost:3001/users/${userId}`);
       setUser(userRes.data.data);
       setDiary(userRes.data.data.diario);
