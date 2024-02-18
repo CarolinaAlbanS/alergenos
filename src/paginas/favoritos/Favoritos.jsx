@@ -14,6 +14,9 @@ const Favoritos = () => {
   console.log(userId);
 
   useEffect(() => {
+    if (!userId || !token) {
+      navigate("/login");
+    }
     getFavorites();
   }, []);
 
@@ -30,6 +33,9 @@ const Favoritos = () => {
   };
 
   const getFavorites = async () => {
+    if (!userId) {
+      return;
+    }
     const res = await axios.get(`http://localhost:3001/users/${userId}`);
     const favsRes = res.data.data.favorites;
     setFavorites(favsRes);
