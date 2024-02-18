@@ -1,18 +1,30 @@
+.satisfacion {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.inicio {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 .gracias{
     border-radius: 5px;
     cursor: pointer;
     border: none;
     padding: 10px;
     background-color: rgb(51, 154, 116);
-    margin: 20px 0;
-    width: 100%;
     color: white;
     font-weight: bold;
     letter-spacing: 1px;
     text-align: center;
 }
 .indice1{
-    width: 30%;
+    width: 160px;
 }
 .sonrisita{
     display: flex;

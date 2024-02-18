@@ -1,5 +1,8 @@
 .valoracion-wrapper {
+    display: flex;
     min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .titleh4{
@@ -7,12 +10,14 @@ font-size: 21px;
 text-align: center;
 letter-spacing: normal;
 }
+
 .titleh5{
 font-size: 21px;
 text-align: center;
 letter-spacing: normal;
 margin-bottom: 40px;
 }
+
 .sugerencias{
     text-decoration: none;
     text-align: center;
@@ -34,6 +39,8 @@ input[type=radio]{
 .volver {
     margin-left: 20px;
     margin-top: 20px;
+    position: absolute;
+    top: 0;
 }
 .logo1 {
     display: flex;
