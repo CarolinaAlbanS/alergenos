@@ -3,18 +3,18 @@
         list-style-type: none;
         display: flex;
         flex-direction: column;
-        display: inline-block;
+        // display: inline-block;
         position: fixed;
         top: 60px;
         left: 30px;
         background: white;
-        width: 140px;
+        // width: 140px;
+        gap: 10px;
+        padding: 20px;
     }
     
     .liHeaderBarList {
-        text-decoration: none;
-        
-        
+        text-decoration: none;       
     }
     
     .imagenHeaderBarList{
@@ -31,12 +31,14 @@
         list-style-type: none;
          display: flex;
          flex-direction: column;
-         display: inline-block;
+        //  display: inline-block;
          position: fixed;
          top: 80px;
          left: 40px;
          background: white;
-    width: 140px;
+        // width: 140px;
+        gap: 20px;
+        padding: 20px;
     }
     
     .liHeaderBarList {
