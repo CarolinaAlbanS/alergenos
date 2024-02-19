@@ -98,7 +98,6 @@ const Informe = () => {
                 ))}
             </ul>
 
-            <button className="informe__btn">Guardar en PDF</button>
             <Link className="informe__link" to="/inicio">
               Volver
             </Link>
