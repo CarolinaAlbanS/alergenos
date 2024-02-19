@@ -37,8 +37,8 @@ input[type=radio]{
         gap: 15px;
 }
 .volver {
-    margin-left: 20px;
-    margin-top: 20px;
+    margin-left: 0;
+    margin-top: 0;
     position: absolute;
     top: 0;
 }
@@ -46,9 +46,14 @@ input[type=radio]{
     display: flex;
     justify-content: center;
     align-items: center;
+    img{
+        width: 140px;
+    }
+
+    
 
 }
-.logo1 img {
+.indice {
     width: 232px;
 }
 a.escaneo {
